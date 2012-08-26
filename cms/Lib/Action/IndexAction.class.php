@@ -11,7 +11,6 @@ class IndexAction extends Action
 		// 获取导航栏目数据
 		$obj_menu = M('Menu');
 		$menu = $obj_menu->where('status = 1')->order('ordering ASC')->select();
-		//print_r($menu);
 		$this->assign("menu", $menu);	// !!!important（因为下面操作重写了$menu，所以不能移到下面统一赋值）
 		
 		$obj_content = M('Content');
