@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索 {$search} 的结果</title>
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/search.css" />
+</head>
+<body>
+<include file="public:header" />
+
+<!-- begin container -->
+<div id="container">
+<p class="mark">搜索<strong>{$search}</strong>的结果：</p>
+<ul>
+    <if condition = "$searchresult neq 0">
+        <volist name="searchresult" id="vo">
+            <li>
+                <p class="title"><a href="{:U('article/index/id/'.$vo['id'])}">{$vo.title}</a></p>
+                <p class="desc">{$vo.description}...</p>
+                <p class="other">栏目：<a href="{:U('menu/index/id/'.$vo['menuid'])}">{$vo.menutitle}</a>  时间：{$vo.ptime}  点击数：{$vo.hits}
+            </li>
+        </volist>
+    <else/><p class="not_found">没找到相关内容</p><p class="advise">搜索建议：&nbsp;使用更一般的关键词</p>
+    </if>
+</ul>
+</div>
+<!-- //end container-->
+
+<include file="public:footer" />
+</body>
+</html>

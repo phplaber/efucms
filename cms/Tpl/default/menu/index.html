@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$menuinfo.title} — {&APP_NAME}</title>
+<meta name="keywords" content="{$menuinfo.metakey}" />
+<meta name="description" content="{$menuinfo.metadesc}" />
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/right.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/listpage.css" />
+</head>
+<body>
+<include file="public:header" />
+
+<!-- begin container -->
+<div id="container">
+<div class="left">
+<p class="breadcrumb">当前位置：<a href="__APP__">首页</a>&nbsp;<img src="../Public/images/arrow.png" />&nbsp;<a href="{:U('menu/index/id/'.$menuinfo['id'])}">{$menuinfo.title}</a></p>
+<ul class="listpage">
+<volist name="list" id="vo">
+<li>
+<p class="title"><a href="{:U('article/index/id/'.$vo['id'])}">{$vo.title}</a><br/><span>{$vo.ptime}</span></p>
+<p class="info">{$vo.description}...</p>
+<p class="comment"><if condition="$vo.comment neq 0"><small><a href="{:U('article/index/id/'.$vo['id'])}#check_comment">{$vo.comment}条评论</a></small><else/><small>0条评论</small></if> - {$vo.hits} views</p>
+</li>
+</volist>
+</ul>
+<p class="page">{$page}</p>
+</div>
+<include file="public:right" />
+</div>
+<!-- //end container-->
+
+<div class="clear"></div>
+<include file="public:footer" />
+</body>
+</html>

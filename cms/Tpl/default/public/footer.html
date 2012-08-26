@@ -1,0 +1,23 @@
+<!-- begin footer -->
+<div id="footer">
+<!-- version 1.0 -->
+
+<div class="links">
+<ul>
+	<li class="fl">友情链接：</li>
+	<volist name="links" id="vo">
+		<li><a href="{$vo.url}" title="{$vo.info}" target="_blank">{$vo.title}</a></li>
+	</volist>
+</ul>
+</div>
+<div class="copyright">
+<ul>
+    <volist name="singlepage" id="vo">
+    	<li><a href="{:U('index/'.$vo['alias'])}">{$vo.title}</a></li>
+    </volist>
+</ul>
+<p>Copyright &copy; {&APP_YEAR} <a href="{&COMPANY_URL}">{&APP_COMPANY} </a>  All rights reserved {&APP_ICP}</p>
+</div>
+
+</div>
+<!-- //end footer-->

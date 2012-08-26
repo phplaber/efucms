@@ -1,0 +1,62 @@
+/*
+** 框架样式表
+*/
+
+*{
+	margin:0;
+	padding:0;}
+
+a,a:visited{
+	color:#00F;}
+
+/* for IE */
+body{
+	text-align:center;}
+
+/* for Mozilla */
+#header, #container, #footer{
+	margin:10px auto;
+	width:960px;
+	text-align:left;}
+
+h5{
+	background:#F93;
+	padding:5px;
+	position:relative;}
+
+h5 a{
+	position:absolute;
+	top:0;
+	right:5px;
+	font:bold 11px/21px Arial, Helvetica, sans-serif;}
+
+#container .left{
+	float:left;
+	width:650px;}
+
+#container .left .slideshow{
+	margin-bottom:10px;
+	background:#F5F5F5;}
+	
+.menu1, .menu2, .menu3, .menu4{
+	width:318px;
+	border:1px solid #f6f6ef;}
+	
+.menu1, .menu3{
+	float:left;}
+	
+.menu2, .menu4{
+	float:right;}
+	
+.menu3, .menu4{
+	margin-top:10px;}
+	
+.menu1 ul li, .menu2 ul li, .menu3 ul li, .menu4 ul li{
+	list-style-type:none;
+	font-size:13px;
+	padding:5px 3px;}
+
+.menu1 a,a:visited, .menu2 a,a:visited, .menu3 a,a:visited, .menu4 a,a:visited{
+	text-decoration:none;
+	padding:0 !important;}	/* for ie */
+

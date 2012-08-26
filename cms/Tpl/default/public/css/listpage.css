@@ -1,0 +1,77 @@
+/*
+** 栏目列表页样式表
+*/
+
+*{
+	margin:0;
+	padding:0;}
+
+a,a:visited{
+	color:#00F;}
+
+/* for IE */
+body{
+	text-align:center;}
+
+/* for Mozilla */
+#header, #container, #footer{
+	margin:10px auto;
+	width:960px;
+	text-align:left;}
+
+p.breadcrumb{
+	padding:5px;
+	font:normal 13px/17px "宋体";}
+
+p.breadcrumb a,a:visited{
+	text-decoration:none;
+	font:normal 13px/17px "宋体";}
+
+p.breadcrumb a:hover{
+	color:#F60;}
+
+#container .left{
+	float:left;
+	width:650px;}
+
+ul.listpage{
+	list-style:none;
+	margin-top:10px;}
+
+ul.listpage li{
+	margin:20px 0;
+	padding:0 10px;
+	border-bottom:1px dashed #ccc;}
+
+ul.listpage li p{
+	margin:10px 0;}
+
+ul.listpage li p.title a,a:visited{
+	font:normal 15px/23px Arial, Helvetica, sans-serif;
+	text-decoration:underline;}
+	
+ul.listpage li p.title a:hover{
+	text-decoration:none;}
+	
+ul.listpage li p.title span{
+	font-size:13px;
+	color:#999;}
+
+ul.listpage li p.info{
+	font:normal 14px/23px "Courier New", Courier, monospace;}
+	
+ul.listpage li p.comment{
+	font-family:"Courier New", Courier, monospace;
+	font-size:13px;
+	color:#999;}
+
+ul.listpage li p.comment a,a:visited{
+	font-size:10px;}
+
+p.page{
+	padding:10px;
+	font:bold 13px Arial, Helvetica, sans-serif;}
+
+p.page a,a:visited{
+	text-decoration:none;
+	font:normal 13px/21px Arial, Helvetica, sans-serif;}

@@ -1,0 +1,36 @@
+<div class="right">
+
+<!-- 站内搜索 -->
+<div class="search">
+<form name="searchform" id="searchform" method="post" action="__APP__/search"> 
+<table>
+<tr>
+<td style="text-align:left;"><input type="text" name="search" id="search" size="32" /></td>
+<td style="text-align:right;"><input type="submit" value="搜索" /></td>
+</tr>
+</table>
+</form>
+</div>
+
+<!-- 热门文章 -->
+<div class="hotarticle">
+<ol>
+<h5>热门文章</h5>
+<volist name="hotarticle" id="vo" key="k">
+<li><img src="../Public/images/num_{$k}.gif" /> <a href="{:U('article/index/id/'.$vo['id'])}" title="{$vo.title}">{$vo._title}</a></li>
+</volist>
+</ol>
+</div>
+
+<!-- 标签云 -->
+<div class="tags">
+<div class="tagsinner">
+<h5>标签</h5>
+<p>
+<volist name="tags" id="vo">
+<a href="{:U('article/index/id/'.$vo['id'])}" title="{$vo.title}">{$vo.keywords}</a>
+</volist>
+</p>
+</div>
+</div>
+</div>

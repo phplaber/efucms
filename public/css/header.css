@@ -1,0 +1,28 @@
+*{
+	margin:0;
+	padding:0;}
+	
+#header{
+border:1px solid red;
+	width:960px;
+	margin:10px auto;
+	height:100px;}
+
+#header .menu ul{
+	background:#000;
+	height:35px;
+	list-style:none;}
+
+#header .menu ul li{
+	float:left;
+	width:100px;}
+
+#header .menu ul li a{
+	text-decoration:none;
+	color:#fff;
+	display:block;
+	padding:7px 20px;
+	font:bold 17px/21px arial,sans-serif;}
+
+#header .menu ul li a:hover{
+	background:red;}

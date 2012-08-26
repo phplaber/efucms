@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$article.title} — {&APP_NAME}</title>
+<meta name="keywords" content="{$article.keywords}" />
+<meta name="description" content="{$article.description}" />
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/right.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/article.css" />
+</head>
+<body>
+<include file="public:header" />
+
+<!-- container -->
+<div id="container">
+<div class="left">
+<p class="breadcrumb">当前位置：<a href="__APP__">首页</a>&nbsp;<img src="../Public/images/arrow.png" />&nbsp;<a href="{:U('menu/index/id/'.$menuid['id'])}">{$menuid.title}</a>&nbsp;<img src="../Public/images/arrow.png" />&nbsp;{$article.title}</p>
+<div class="article">
+<p class="title">{$article.title}</p>
+<p class="info">{$article.ptime} - By {$article.author} - {$article.hits} views</p><br/><br/>
+<p class="abstract">摘要：{$article.description}</p>
+<div class="fulltext">{$article.fulltext}</div>
+</div>
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="padding: 0 10px;">
+        <span class="bds_more">分享到：</span>
+        <a class="bds_qzone"></a>
+        <a class="bds_tsina"></a>
+        <a class="bds_tqq"></a>
+        <a class="bds_renren"></a>
+		<a class="shareCount"></a>
+    </div>
+<script type="text/javascript" id="bdshare_js" data="type=tools" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+<div class="clear"></div>
+
+<!-- 上下篇 -->
+<div class="pronext">
+    <p class="pro">上一篇：
+        <if condition="$pro.id eq 0">{$pro.title}
+        <else/><a href="{:U('article/index/id/'.$pro['id'])}">{$pro.title}</a>
+        </if>
+    </p>
+	<p class="next">下一篇：
+		<if condition="$next.id eq 0">{$next.title}
+		<else/><a href="{:U('article/index/id/'.$next['id'])}">{$next.title}</a>
+		</if>
+    </p>
+</div>
+
+<!-- 评论 -->
+<div class="comment">
+	<div class="show_comment">
+    <h3 id="check_comment">相关评论&nbsp;<a href="#post">发表</a></h3>
+    <if condition="$show_comment eq 0"><p class="nocomment">暂无评论</p>
+    <else/>
+        <ul>
+            <volist name="show_comment" id="vo">
+                <li>
+                	<p class="cname">
+                    <if condition="$vo.url neq 'http://'"><a href="{$vo.url}">{$vo.cname}</a>&nbsp;说：
+                    <else/>{$vo.cname}&nbsp;说：
+                    </if></p>
+                    <p class="ctext">{$vo.ctext}</p>
+                    <p class="ctime">{$vo.ctime|date="m-d-Y H:i", ###} - {$vo.id}楼</p>
+                </li>
+            </volist>
+        </ul>
+    </if>
+    </div>
+    <div class="post_comment">
+    <h3 id="post">发表评论</h3><br/>
+    	<form name="comment" method="post" action="__URL__/comment"  onSubmit="return validate_form(this)">
+        {__TOKEN__} 
+        <!-- 将文章ID交由程序写入数据库，实现评论和文章的 -->
+        <input type="hidden" name="artid" value="{$artid}" />
+        <p>
+        	<textarea id="ctext" name="ctext" rows="7" cols="70" style="font-size:13px;" ></textarea>
+        </p>
+        <p>
+        	<label for="cname" title="必填"><small>怎么称呼</small><span style="color: #F00;">*</span></label><br/>
+            <input type="text" id="cname" name="cname" value="" size="23"/>
+        </p>
+        <p>
+        	<label for="email" title="必填"><small>邮箱地址</small><span style="color: #F00;">*</span></label><br/>
+            <input type="text" id="email" name="email" value="" size="23"/>
+        </p>
+        <p>
+        	<label for="url"><small>博客URL</small></label><br/>
+            <input type="text" id="url" name="url" value="" size="23"/>
+        </p>
+        <p class="submit"><input type="submit" name="post" value="提交发表" />&nbsp;&nbsp;&nbsp;&nbsp;<small style="font-size:12px;color:#ccc;">如果评论未显示，请等待审核。</small></p>
+        </form>
+    </div>
+</div>
+</div>
+<include file="public:right" />
+</div>
+<!-- //container-->
+
+<div class="clear"></div>
+<include file="public:footer" />
+<script type="text/javascript">
+function check(field,alerttxt)
+{
+	with (field)
+	{
+	  if (value==null||value=="")
+		{alert(alerttxt);return false}
+	  else {return true}
+	}
+}
+
+function validate_form(thisform)
+{
+	with (thisform)
+  	{
+		if (check(ctext,"请填写您的评论")==false)
+    		{ctext.focus();return false}
+		if (check(cname,"请填写您的称呼")==false)
+			{cname.focus();return false}
+		if (check(email,"请填写您的邮箱 (不会公开)")==false)
+    		{email.focus();return false}
+	}
+}
+</script>
+</body>
+</html>

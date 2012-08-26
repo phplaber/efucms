@@ -1,0 +1,46 @@
+/*
+** 右侧样式表
+*/
+
+#container .right{
+	float:right;
+	width:300px;
+	background:#F5F5F5;}
+
+#container .right h5{
+	background:#F93;
+	padding:5px;
+	margin-bottom:5px;}
+	
+#container .right .search{
+	padding:10px;}
+
+#container .right .hotarticle{
+	margin-top:10px;}
+
+#container .right .hotarticle ol{
+	margin:10px;}
+
+#container .right .hotarticle ol li{
+	list-style-type:none;
+	font-size:13px;
+	padding:5px 3px;}
+
+#container .right .hotarticle ol li a,a:visited{
+	text-decoration:none;
+	font-size:13px;
+	font-weight:normal;}
+	
+#container .right .tags{
+	margin-top:10px;}
+	
+#container .right .tags .tagsinner{
+	margin:10px;}
+
+#container .right .tags .tagsinner p{
+	padding:5px;}
+
+#container .right .tags .tagsinner p a,a:visited{
+	text-decoration:none;
+	font-weight:normal;}
+

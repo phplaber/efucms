@@ -1,0 +1,12 @@
+<!-- begin header -->
+<div id="header">
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td><a href="__APP__">首页</a></td>
+<volist name="menu" id="vo">
+<td><a href="{:U('menu/index/id/'.$vo['id'])}">{$vo.title}</a></td>
+</volist>
+</tr>
+</table>
+</div>
+<!-- //end header-->

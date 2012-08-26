@@ -1,0 +1,56 @@
+/*
+** 搜索内容样式表
+*/
+
+*{
+	margin:0;
+	padding:0;}
+
+a,a:visited{
+	color:#00F;}
+
+/* for IE */
+body{
+	text-align:center;}
+
+/* for Mozilla */
+#header, #container, #footer{
+	margin:0 auto;
+	width:960px;
+	text-align:left;}
+
+#header{
+	margin-top:10px;}
+	
+#container{
+	background:#F5F5F5;}
+
+#container p.mark{
+	font-size:15px;
+	padding:10px;}
+	
+#container ul{
+	padding:10px;
+	list-style:none;}
+
+#container ul p.not_found, p.advise{
+	font-size:13px;
+	margin:5px 0;}
+
+#container ul li{
+	padding:10px 0;}
+
+#container ul li p.title a,a:visited{
+	font:15px/23px Arial, Helvetica, sans-serif;
+	text-decoration:underline;}
+	
+#container ul li p.title a:hover{
+	text-decoration:none;}
+
+#container ul li p.desc{
+	font:normal 13px/23px "Courier New", Courier, monospace;}
+
+#container ul li p.other{
+	font:normal 12px/23px "Courier New", Courier, monospace;
+	color:#999;}
+

@@ -1,0 +1,66 @@
+/*
+** 公共样式表（头部和底部）
+*/
+
+/* 头部 */
+#header{
+	height:30px;
+	background:#FF9933;}
+
+#header table tr td{
+	width:70px;
+	height:30px;
+	text-align:center;}
+
+#header table tr td a,a:visited{
+	text-decoration:none;
+	font:normal 15px/18px "黑体", "隶书";
+	color:#000;}
+
+
+/* 底部 */
+html body div.clear{
+	clear:both;
+    border:0;
+    margin:0;
+    padding:0;}
+
+#footer{
+	border-top:2px solid #FF9933;
+	background:#F5F5F5;
+	font:13px/21px Arial, Helvetica, sans-serif;}
+
+#footer .links ul li{
+	float:left;
+	list-style-type:none;
+	padding:10px;}
+	
+#footer a,a:visited{
+	text-decoration:none;
+	font:13px/21px Arial, Helvetica, sans-serif;}
+
+#footer .links ul li.fl{
+	font-weight:bold;
+	color:#FF9933;}
+
+#footer .copyright{
+	text-align:center;}	/* for IE */
+	
+#footer .copyright ul{
+	margin:0 auto;
+	width:240px;
+	margin-top:50px;
+	margin-bottom:5px;}
+	
+#footer .copyright ul li{
+	float:left;
+	list-style-type:none;
+	padding:0 10px;
+	font:13px/21px Arial, Helvetica, sans-serif ;}
+	
+#footer .copyright p{
+	clear:both;
+	text-align:center;
+	font:13px/21px Arial, Helvetica, sans-serif;
+	color:#999;}
+

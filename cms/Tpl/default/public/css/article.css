@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+** 内容页样式表
+*/
+
+*{
+	margin:0;
+	padding:0;}
+
+a,a:visited{
+	color: #00F;}
+
+/* for IE */
+body{
+	text-align:center;}
+
+/* for Mozilla */
+#header, #container, #footer{
+	margin:10px auto;
+	width:960px;
+	text-align:left;}
+
+p.breadcrumb{
+	padding: 5px;
+	font: normal 13px/17px "宋体";}
+
+p.breadcrumb a,a:visited{
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: normal;}
+
+p.breadcrumb a:hover{
+	color: #F60;}
+	
+#container .left{
+	float:left;
+	width:650px;}
+	
+div.article{
+	margin: 20px 0;
+	padding: 0 10px;}
+
+div.article p.title{
+	text-align: center;
+	font: normal 17px/23px "宋体";}
+
+div.article p.info{
+	font-size:12px;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	color: #999;}
+
+div.article p.abstract{
+	background: #F5F5F5;
+	padding: 5px;
+	font: normal 13px/21px Arial, Helvetica, sans-serif;}
+
+div.fulltext{
+	margin: 20px 0 10px;}
+
+div.fulltext p{
+	text-indent: 2em;
+	font: normal 15px/23px "宋体";
+	margin: 5px 0;}
+
+div.pronext{
+	margin: 10px 0;
+	padding: 5px 10px;
+	font-size: 13px;}
+
+div.pronext a,a:visited{
+	text-decoration: none;}
+
+div.pronext p.pro{
+	margin: 10px 0;}
+	
+div.comment{
+	padding: 5px 10px;}
+
+div.comment p.nocomment{
+	font: normal 13px/21px Arial, Helvetica, sans-serif;}
+
+div.comment div.show_comment{
+	margin-bottom: 30px;}
+	
+div.comment div.show_comment h3 a{
+	font-size: 12px;
+	text-decoration: underline;}
+	
+div.comment div.show_comment ul li{
+	list-style-type: none;
+	padding: 10px 0;
+	border-bottom: 1px dashed #CCC;}
+
+div.comment div.show_comment ul li:last-child{
+	border-bottom: none;}
+
+p.cname{
+	font: bold 13px/21px Arial, Helvetica, sans-serif;}
+
+p.ctext{
+	font: 13px/23px "宋体";}
+
+p.ctime{
+	font: 13px/23px "宋体";
+	color: #999;}
+
+div.comment div.post_comment p{
+	margin-bottom: 7px;}
+	
+div.comment div.post_comment p.submit{
+	margin-top: 15px;}
