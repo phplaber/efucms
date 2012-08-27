@@ -1,0 +1,2 @@
+# 不将ThinkPHP目录下的文件纳入版本控制
+ThinkPHP/
