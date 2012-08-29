@@ -1,2 +1,4 @@
-# 不将ThinkPHP目录下的文件纳入版本控制
+# 版本控制之外清单
 ThinkPHP/
+
+cms/Run/
