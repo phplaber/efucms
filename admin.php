@@ -1,6 +1,6 @@
 <?php
 
-/* 网站入口文件 */
+/* 网站后台入口文件 */
 //定义ThinkPHP框架路径
 define('THINK_PATH', 'ThinkPHP');
 
