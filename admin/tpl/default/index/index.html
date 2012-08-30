@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&APP_COMPANY} — 管理后台</title>
+<style type="text/css">
+body{
+	text-align:center;}
+
+#head, #loginform, #footer{
+	margin:0 auto;
+	width:500px;
+	text-align:left;}
+
+#head{
+	margin-top:100px;}
+
+#head h1 {
+    color:#FF9933;
+    font-size:20px;
+	margin:15px 0;}
+	
+#loginform{
+	background-color:#f6f6ef;
+	padding:20px 0;}
+	
+#loginform table td label{
+	font-weight:bold;
+	font-size:13px;
+	display:block;}
+	
+#footer{
+	background-color:#f6f6ef;
+	border-top:2px solid #FF9933;}
+
+#footer p{
+	font:bold 13px/21px "Courier New", Courier, monospace;
+	color:#CCC;
+	padding:0 0 5px 10px;}
+
+#footer p a{
+	text-decoration:none;}
+
+#footer p a,a:visited{
+	color:#CCC;
+	font-weight:normal;}
+
+#footer p a:hover{
+	color:#FF9933;}
+
+</style>
+</head>
+
+<body>
+<div id="head">
+<h1>efucms管理后台登录</h1>
+</div>
+
+<div id="loginform">
+<table cellpadding="7">
+<form id="loginform" name="loginform" action="__URL__/checkform" method="post" onsubmit="return checkForm()">
+<tr>
+<td colspan="2" id="error"></td>
+</tr>
+<tr>
+<td align="right"><label for="username">用户名</label></td>
+<td><input type="text" name="username" id="username"/></td>
+</tr>
+<tr>
+<td align="right"><label for="psw">密码</label></td>
+<td><input type="password" name="password" id="psw" /></td>
+</tr>
+<tr>
+<td colspan="2" align="right"><input type="submit" name="submitform" value="登录" /></td>
+</tr>
+</form>
+</table>
+</div>
+
+<div id="footer">
+<p>Powered by:&nbsp;<a href="" title="easy for use cms">efucms</a></p>
+</div>
+
+<script type="text/javascript">
+function checkForm()
+{
+	if(document.getElementById("username").value=="" || document.getElementById("psw").value=="")
+	{
+		document.getElementById("error").innerHTML = "<small>无效的用户名或密码</small>";
+		return false;
+	}
+	
+}
+</script>
+
+</body>
+</html>
