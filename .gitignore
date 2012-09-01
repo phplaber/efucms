@@ -1,6 +1,5 @@
 # 版本控制之外清单
 ThinkPHP/
 
-cms/Run
+cms/Run/
 admin/Run/
-~*.php
