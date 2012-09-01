@@ -1,0 +1,20 @@
+/* 后台管理首页样式表 */
+
+#container .right{
+	float:right;
+	width:73%;
+	border:2px solid #FC6;}
+
+.right h3{
+	padding:10px;}
+
+.right h3 span{
+	color:#FF9933;}
+
+.right p{
+	margin-top:20px;
+	padding:10px;
+	font:15px/23px "Courier New", Courier, monospace;}
+
+.right p a{
+	color:#33F;}

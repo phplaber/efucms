@@ -1,0 +1,101 @@
+/* 公共样式表 */
+
+*{
+	margin:0;
+	padding:0;}
+
+/* for IE */
+body{
+	text-align:center;}
+
+/* for Mozilla */
+#header, #container, #footer{
+	margin:10px auto;
+	width:960px;
+	text-align:left;}
+
+#header table{
+	width:960px;
+	background:#3C0;
+	padding:2px 20px 10px;}
+
+#header table tr td a{
+	font:15px/21px "Courier New", Courier, monospace;
+	text-decoration:none;
+	color:#33F;}
+
+.row1, .row16{
+	margin:0 9px;
+	background:#3C0;}
+.row2, .row15{
+	margin:0 8px;
+	background:#3C0;}
+.row3, .row14{
+	margin:0 7px;
+	height:1px;
+	background:#3C0;}
+.row4, .row13{
+	margin:0 5px;
+	height:1px;
+	background:#3C0;}
+.row5, .row12{
+	margin:0 4px;
+	background:#3C0;}
+.row6, .row11{
+	margin:0 3px;
+	height:1px;
+	background:#3C0;}
+.row7, .row10{
+	margin:0 2px;
+	height:2px;
+	background:#3C0;}
+.row8, .row9{
+	margin:0 1px;
+	height:3px;
+	background:#3C0;}
+	
+#container .left{
+	float:left;
+	width:24%;
+	background:#FC6;}
+
+.left table{
+	margin: 10px auto;
+	width:200px;}
+
+.left table tr td{
+	background:#FF9933;
+	text-align:center;}
+
+.left table tr td a{
+	color:#000;
+	text-decoration:none;
+	display:block;
+	font:bold 13px/2em "Courier New", Courier, monospace;}
+
+.left table tr td a:hover{
+	background:#FC6;
+	color:#3C0;}
+
+div.clear{
+	clear:both;
+    border:0;
+    margin:0;
+    padding:0;}
+
+#footer p{
+	background:#3C0;
+	font:bold 15px/21px "Courier New", Courier, monospace;
+	color:#CCC;
+	padding:8px 20px 0;}
+
+#footer p a{
+	text-decoration:none;}
+
+#footer p a,a:visited{
+	color:#CCC;
+	font-weight:normal;}
+
+#footer p a:hover{
+	color:#FF9933;}
+
