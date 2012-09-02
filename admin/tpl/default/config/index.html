@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&APP_NAME} — 管理后台</title>
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/config.css" />
+</head>
+
+<body>
+<!-- begin header -->
+<div id="header">
+	<include file="public:header"/>
+</div>
+<!-- //end header -->
+
+<!-- begin container -->
+<div id="container">
+<div class="left">
+	<include file="public:menu"/>
+</div>
+<div class="right">
+<p class="title"><img src="../Public/image/config.png" style="vertical-align: middle"/>&nbsp;全局配置</p>
+<div class="dbset">
+<fieldset>
+<legend>数据库设置</legend>
+<table>
+<tbody>
+<tr>
+<td>数据库类型</td>
+<td>&nbsp;<input type="text" name="db_type" id="db_type" value="{$config.DB_TYPE}"/></td>
+</tr>
+<tr>
+<td>主机名</td>
+<td>&nbsp;<input type="text" name="db_host" id="db_host" value="{$config.DB_HOST}"/></td>
+</tr>
+<tr>
+<td>用户名</td>
+<td>&nbsp;<input type="text" name="db_user" id="db_user" value="{$config.DB_USER}"/></td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>&nbsp;<input type="text" name="db_name" id="db_name" value="{$config.DB_NAME}"/></td>
+</tr>
+<tr>
+<td>数据表前缀</td>
+<td>&nbsp;<input type="text" name="db_prefix" id="db_prefix" value="{$config.DB_PREFIX}" size="10"/>&nbsp;&nbsp;<span><img src="../Public/image/warning.png" style="vertical-align: middle" alt="warning" title="不要修改。除非您有一个数据表正在使用您所设置的数据表前缀。"/></span></td>
+</tr>
+</tbody>
+</table>
+</fieldset>
+</div>
+
+<div class="webset">
+<fieldset>
+<legend>网站配置</legend>
+<table>
+<tbody>
+<tr>
+<td>网站名称</td>
+<td>&nbsp;<input type="text" name="app_name" id="app_name" value="{$config.APP_NAME}"></td>
+</tr>
+<tr>
+<td>列表长度</td>
+<td>&nbsp;<input type="text" name="list_page" id="list_page" value="{$config.LIST_PAGE}" size="10"/></td>
+</tr>
+<tr>
+<td>网站简介</td>
+<td>&nbsp;<textarea name="app_metadesc" id="app_metadesc" rows="3" cols="50" style="width:400px; height:50px;font-size:11px;">{$config.APP_METADESC}</textarea></td>
+</tr>
+<tr>
+<td>网站关键字</td>
+<td>&nbsp;<textarea name="app_metakey" id="app_metakey" rows="3" cols="50" style="width:400px; height:50px;font-size:11px;">{$config.APP_METAKEY}</textarea></td>
+</tr>
+<tr>
+<td>版权年份</td>
+<td>&nbsp;<input type="text" name="app_year" id="app_year" value="{$config.APP_YEAR}" size="10"/></td>
+</tr>
+<tr>
+<td>备案号</td>
+<td>&nbsp;<input type="text" name="app_icp" id="app_icp" value="{$config.APP_ICP}"/></td>
+</tr>
+</tbody>
+</table>
+</fieldset>
+</div>
+</div>
+</div>
+<!-- //end container -->
+
+<div class="clear"></div>
+
+<!-- begin footer -->
+<div id="footer">
+	<include file="public:footer"/>
+</div>
+<!-- //end footer -->
+
+</body>
+</html>

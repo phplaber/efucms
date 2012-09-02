@@ -1,0 +1,36 @@
+/* 网站配置样式表 */
+
+#container .right{
+	float:right;
+	width:73%;
+	border:2px solid #FC6;}
+
+.right p.title{
+	margin:10px 10px 30px 10px;
+	font-weight:bold;
+	color:#0B55C4;}
+
+.dbset, .webset{
+	margin:15px 10px;}
+
+fieldset{
+	text-align:left;}
+
+legend {
+    color:#0B55C4;
+    font-size:13px;
+    font-weight:bold;}
+
+.dbset input[type=text], .webset input[type=text]{
+	font-size:11px;}
+	
+.dbset table tr td:first-child, .webset table tr td:first-child{
+	width:150px;
+	padding:5px 0;
+	text-align:right;
+	font-size:12px;
+	font-weight:bold;
+	color: #666666;
+	background-color:#F6F6F6;}
+
+

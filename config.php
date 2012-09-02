@@ -1,6 +1,6 @@
 <?php
 
-/* 配置文件 */
+/* 配置文件 (说明：修改配置文件后，需重新进行项目编译，修改才会生效。)*/
 return array(
 	// 数据库配置
 	'APP_DEBUG' => false, // 关闭调试模式
@@ -16,10 +16,8 @@ return array(
 	'APP_NAME'=>'Easy For Use CMS',
 	'APP_METAKEY'=>'CMS, 简单易用',
 	'APP_METADESC'=>'EFUcms是一款简单易用的内容管理系统，提供了CMS所有最基本的功能。',
-	'APP_YEAR'=>'2012',
-	'APP_COMPANY'=>'开源软件实验室',
-	'COMPANY_URL'=>'http://www.phplabor.com',
 	'APP_ICP'=>'苏ICP备11033855号-1',
-	'LIST_PAGE' =>'5',	// 栏目列表每页展示文章数
+	'APP_YEAR'=> '2012',
+	'LIST_PAGE' => 5,	// 栏目列表每页展示文章数
 );
 ?>
