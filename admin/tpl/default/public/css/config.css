@@ -10,7 +10,7 @@
 	font-weight:bold;
 	color:#0B55C4;}
 
-.dbset, .webset{
+.dbset, .webset, .submitform{
 	margin:15px 10px;}
 
 fieldset{
@@ -32,5 +32,8 @@ legend {
 	font-weight:bold;
 	color: #666666;
 	background-color:#F6F6F6;}
+
+.submitform table tr td{
+	width:50px;}
 
 

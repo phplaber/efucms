@@ -21,6 +21,10 @@
 </div>
 <div class="right">
 <p class="title"><img src="../Public/image/config.png" style="vertical-align: middle"/>&nbsp;全局配置</p>
+
+<form name="configform" method="post" action="__URL__/update" onsubmit="return checkForm();">
+{__TOKEN__}
+<!-- 数据库配置 -->
 <div class="dbset">
 <fieldset>
 <legend>数据库设置</legend>
@@ -51,6 +55,7 @@
 </fieldset>
 </div>
 
+<!-- 网站配置 -->
 <div class="webset">
 <fieldset>
 <legend>网站配置</legend>
@@ -84,6 +89,19 @@
 </table>
 </fieldset>
 </div>
+
+<!-- 提交表单 -->
+<div class="submitform">
+<table>
+<tbody>
+<tr>
+<td><input type="submit" value="保存"/></td>
+<td><input type="button" onclick="javascript:history.back(-1);" value="取消"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
 </div>
 </div>
 <!-- //end container -->
@@ -95,6 +113,46 @@
 	<include file="public:footer"/>
 </div>
 <!-- //end footer -->
-
+<script type="text/javascript">
+function checkForm()
+{
+	if(document.getElementById("db_type").value =="")
+	{
+		alert("数据库类型不能为空");
+		document.getElementById("db_type").focus();
+		return false;
+	}
+	if(document.getElementById("db_host").value =="")
+	{
+		alert("主机名不能为空");
+		document.getElementById("db_host").focus();
+		return false;
+	}
+	if(document.getElementById("db_user").value =="")
+	{
+		alert("用户名不能为空");
+		document.getElementById("db_user").focus();
+		return false;
+	}
+	if(document.getElementById("db_name").value =="")
+	{
+		alert("数据库不能为空");
+		document.getElementById("db_name").focus();
+		return false;
+	}
+	if(document.getElementById("app_name").value =="")
+	{
+		alert("请填写网站名称");
+		document.getElementById("app_name").focus();
+		return false;
+	}
+	if(document.getElementById("list_page").value =="" || document.getElementById("list_page").value <=0)
+	{
+		alert("请正确填写列表长度");
+		document.getElementById("list_page").focus();
+		return false;
+	}
+}
+</script>
 </body>
 </html>

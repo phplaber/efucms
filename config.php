@@ -3,7 +3,6 @@
 /* 配置文件 (说明：修改配置文件后，需重新进行项目编译，修改才会生效。)*/
 return array(
 	// 数据库配置
-	'APP_DEBUG' => false, // 关闭调试模式
 	'DB_TYPE'=> 'mysql',      // 数据库类型
 	'DB_HOST'=> 'localhost', // 数据库服务器地址
 	'DB_NAME'=>'efucms',  // 数据库名称
