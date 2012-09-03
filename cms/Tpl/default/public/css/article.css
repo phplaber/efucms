@@ -62,8 +62,8 @@ div.fulltext{
 
 div.fulltext p{
 	text-indent: 2em;
-	font: normal 15px/23px "宋体";
-	margin: 5px 0;}
+	font: 15px/25px "Courier New", Courier, monospace;
+	margin: 10px 0;}
 
 div.pronext{
 	margin: 10px 0;
