@@ -12,6 +12,9 @@
 a,a:visited{
 	color: #00F;}
 
+input:focus, select:focus, textarea:focus{
+	background:#FFC;}
+
 /* for IE */
 body{
 	text-align:center;}

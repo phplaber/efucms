@@ -4,8 +4,11 @@
 
 /* 头部 */
 #header{
-	height:30px;
 	background:#FF9933;}
+	
+#header h1{
+	background:#fff;
+	padding-bottom:10px;}
 
 #header table tr td{
 	width:70px;

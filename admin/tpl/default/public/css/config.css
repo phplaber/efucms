@@ -1,5 +1,8 @@
 /* 网站配置样式表 */
 
+input:focus, select:focus, textarea:focus{
+	background:#FFC;}
+	
 #container .right{
 	float:right;
 	width:73%;
