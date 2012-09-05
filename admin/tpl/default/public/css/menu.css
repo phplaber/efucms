@@ -1,0 +1,36 @@
+/* 栏目管理样式表 */
+
+input:focus, select:focus, textarea:focus{
+	background:#FFC;}
+	
+#container .right{
+	float:right;
+	width:73%;
+	border:2px solid #FC6;}
+
+.right p.title{
+	margin:10px 10px 30px 10px;
+	font-weight:bold;
+	color:#0B55C4;}
+
+.right table{
+	margin:10px;
+	width:680px;
+	border:1px solid #CCC;}
+
+.right table tr, .right table tr th, .right table tr td{
+	border:1px solid #CCC;}
+
+.right table tr th{
+	text-align:center;
+	background:#F0F0F0;
+	padding:5px 0;
+	font:bold 13px/21px "Courier New", Courier, monospace;
+	color:#0B55C4;}
+	
+.right table tr td{
+	text-align:center;
+	padding:5px 0;
+	font:normal 13px/21px "Courier New", Courier, monospace;}
+
+

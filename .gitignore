@@ -3,3 +3,4 @@ ThinkPHP/
 cms/Run/
 admin/Run/
 Thumbs.db
+copy config.php

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&APP_NAME} — 管理后台</title>
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/menu.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script type="text/javascript">
+function selectAll(checkbox) {
+$('input[type=checkbox]').attr('checked', $(checkbox).attr('checked'));
+}
+</script>
+</head>
+
+<body>
+<!-- begin header -->
+<div id="header">
+	<include file="public:header"/>
+</div>
+<!-- //end header -->
+
+<!-- begin container -->
+<div id="container">
+<div class="left">
+	<include file="public:menu"/>
+</div>
+<div class="right">
+<p class="title"><img src="../Public/image/menu.png" style="vertical-align: middle"/>&nbsp;栏目管理</p>
+<h3 style="color:#33CC00;margin:10px;">{$message_menu}</h3>
+
+<table cellpadding="0" cellspacing="1">
+<tbody>
+<tr>
+<th>#</th>
+<th><input type="checkbox" onclick="selectAll(this);"></th>
+<th>标题</th>
+<th>状态</th>
+<th>排序</th>
+<th>存档数</th>
+<th>ID</th>
+</tr>
+<volist name="menuitem" id="vo" key="k">
+<tr>
+<td>{$k}</td>
+<td><input type="checkbox"/></td>
+<td>{$vo.title}</td>
+<td>
+<if condition="$vo.status eq 1"><img src="../Public/image/tick.png" style="vertical-align: middle"/>
+<else/><img src="../Public/image/publish_x.png" style="vertical-align: middle"/>
+</if></td>
+<td>{$vo.ordering}</td>
+<td>{$vo.articlesum}</td>
+<td>{$vo.id}</td>
+</tr>
+</volist>
+</tbody>
+</table>
+</div>
+</div>
+<!-- //end container -->
+
+<div class="clear"></div>
+
+<!-- begin footer -->
+<div id="footer">
+	<include file="public:footer"/>
+</div>
+<!-- //end footer -->
+</body>
+</html>
