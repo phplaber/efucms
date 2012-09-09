@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&APP_NAME} — 管理后台</title>
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/edit.css" />
+</head>
+
+<body>
+<!-- begin header -->
+<div id="header">
+	<include file="public:header"/>
+</div>
+<!-- //end header -->
+
+<!-- begin container -->
+<div id="container">
+<div class="left">
+	<include file="public:menu"/>
+</div>
+<div class="right">
+<p class="title"><img src="../Public/image/menu.png" style="vertical-align: middle"/>&nbsp;栏目管理<span>[编辑]</span></p>
+<h3 style="color:#33CC00;margin:10px;">{$message_menu}</h3>
+
+<form name="editmenu" method="post" action="__URL__/update" onsubmit="return checkForm();">
+<input type="hidden" name="id" value="{$menu.id}"/>
+<div class="editmenu">
+<fieldset>
+<legend>菜单项</legend>
+<table>
+<tbody>
+<tr>
+<td>ID</td>
+<td>&nbsp;<small>{$menu.id}</small></td>
+</tr>
+<tr>
+<td>标题</td>
+<td>&nbsp;<input type="text" name="title" id="title" value="{$menu.title}"/></td>
+</tr>
+<tr>
+<td>别名</td>
+<td>&nbsp;<input type="text" name="alias" id="alias" value="{$menu.alias}"/></td>
+</tr>
+<tr>
+<td>是否发布</td>
+<td>&nbsp;<if condition="$menu.status eq 1"><input type="radio" name="status" id="status" value="1" checked="checked"/>&nbsp;<small>是</small>
+<input type="radio" name="status" id="status" value="0"/>&nbsp;<small>否</small>
+<else/><input type="radio" name="status" id="status" value="1"/>&nbsp;<small>是</small>
+<input type="radio" name="status" id="status" value="0" checked="checked"/>&nbsp;<small>否</small>
+</if></td>
+</tr>
+<tr>
+<td>排序</td>
+<td>&nbsp;<select name="ordering">
+<volist name="ordering" id="vo">
+<if condition="$vo.ordering eq $menu['ordering']"><option value="{$vo.ordering}" selected="selected">{$vo.ordering}&nbsp;{$vo.title}</option>
+<else/><option value="{$vo.ordering}">{$vo.ordering}&nbsp;{$vo.title}</option>
+</if>
+</volist>
+</select>
+</td>
+</tr>
+<tr>
+<td>关键词</td>
+<td>&nbsp;<textarea name="metakey" id="metakey" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$menu.metakey}</textarea></td>
+</tr>
+<tr>
+<td>描述</td>
+<td>&nbsp;<textarea name="metadesc" id="metadesc" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$menu.metadesc}</textarea></td>
+</tr>
+</tbody>
+</table>
+</fieldset>
+</div>
+
+<div class="submitform">
+<table>
+<tbody>
+<tr>
+<td><input type="submit" value="保存"/></td>
+<td><input type="button" onclick="javascript:history.back(-1);" value="取消"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+</div>
+</div>
+<!-- //end container -->
+
+<div class="clear"></div>
+
+<!-- begin footer -->
+<div id="footer">
+	<include file="public:footer"/>
+</div>
+<!-- //end footer -->
+</body>
+</html>

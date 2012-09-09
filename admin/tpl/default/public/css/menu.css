@@ -8,29 +8,54 @@ input:focus, select:focus, textarea:focus{
 	width:73%;
 	border:2px solid #FC6;}
 
-.right p.title{
-	margin:10px 10px 30px 10px;
+.right .top{
+	margin:10px 10px 30px 10px;}
+
+.right .top table tbody tr td p.title{
 	font-weight:bold;
 	color:#0B55C4;}
 
-.right table{
+.right .top table tbody tr td a{
+	text-decoration:none;
+	color:#3333FF;
+	font-weight:bold;
+	font-size:13px;}
+
+.right .top table tbody tr td a:visited{
+	color:#3333FF;}
+	
+.right .top table tbody tr td a:hover{
+	text-decoration:underline;}
+
+.right .bottom table{
 	margin:10px;
 	width:680px;
 	border:1px solid #CCC;}
 
-.right table tr, .right table tr th, .right table tr td{
+.right .bottom table tr, .right .bottom table tr th, .right .bottom table tr td{
 	border:1px solid #CCC;}
 
-.right table tr th{
+.right .bottom table tbody tr th{
 	text-align:center;
 	background:#F0F0F0;
 	padding:5px 0;
 	font:bold 13px/21px "Courier New", Courier, monospace;
 	color:#0B55C4;}
 	
-.right table tr td{
+.right .bottom table tbody tr td{
 	text-align:center;
 	padding:5px 0;
 	font:normal 13px/21px "Courier New", Courier, monospace;}
+
+.right .bottom table tbody tr td a{
+	text-decoration:none;
+	color:#3333FF;
+	font-size:12px;}
+	
+.right .bottom table tbody tr td a:visited{
+	color:#3333FF;}
+
+.right .bottom table tbody tr td a:hover{
+	text-decoration:underline;}
 
 

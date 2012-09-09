@@ -30,7 +30,7 @@ class ConfigAction extends Action
 			$config = require "config.php";
 
 			//print_r($config);
-			$str_config = "<?php return array(";
+			$str_config = "<?php return array('DB_PWD'=>'198802102357',";
 			array_push($_POST, $_POST['__hash__']=0);
 			array_pop($_POST);
 			$_POST = array_filter($_POST);
@@ -42,15 +42,19 @@ class ConfigAction extends Action
 					$config[$key] = trim($value);
 				$str_config .= "'".$key."'=>"."'".$config[$key]."',";
 			}
-			$str_config = substr($str_config, 0, -1)."); ?>";
+			$str_config = substr($str_config, 0, -1).");";
 			if(file_put_contents('config.php', $str_config))
 			{
 				session_start();
-				$_SESSION['message_config'] = "全局设置已更新 :)";
+				$_SESSION['message_config'] = ":)";
 				$this->redirect('config/index');
 			}
 			else
-				$this->error('更新失败！');
+			{
+				session_start();
+				$_SESSION['message_config'] = "<span style='color:red;'>:(</span>";
+				$this->redirect('config/index');
+			}
 		}
 	}
 }

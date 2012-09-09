@@ -23,7 +23,6 @@
 <p class="title"><img src="../Public/image/config.png" style="vertical-align: middle"/>&nbsp;全局配置</p>
 <h3 style="color:#33CC00;margin:10px;">{$message_config}</h3>
 <form name="configform" method="post" action="__URL__/update" onsubmit="return checkForm();">
-{__TOKEN__}
 <!-- 数据库配置 -->
 <div class="dbset">
 <fieldset>
@@ -71,11 +70,11 @@
 </tr>
 <tr>
 <td>网站简介</td>
-<td>&nbsp;<textarea name="app_metadesc" id="app_metadesc" rows="3" cols="50" style="width:400px; height:50px;font-size:11px;">{$config.APP_METADESC}</textarea></td>
+<td>&nbsp;<textarea name="app_metadesc" id="app_metadesc" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$config.APP_METADESC}</textarea></td>
 </tr>
 <tr>
 <td>网站关键字</td>
-<td>&nbsp;<textarea name="app_metakey" id="app_metakey" rows="3" cols="50" style="width:400px; height:50px;font-size:11px;">{$config.APP_METAKEY}</textarea></td>
+<td>&nbsp;<textarea name="app_metakey" id="app_metakey" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$config.APP_METAKEY}</textarea></td>
 </tr>
 <tr>
 <td>版权年份</td>
