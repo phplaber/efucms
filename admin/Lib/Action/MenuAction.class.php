@@ -69,7 +69,6 @@ class MenuAction extends Action
 			$this->assign("ordering", $menuordering);
 			$this->assign("menuid", $menuid[0]['id']+1);
 			$this->display('menu/add');
-
 		}
 	}
 
