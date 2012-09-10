@@ -1,4 +1,4 @@
-/* 栏目管理样式表 */
+/* 文章管理样式表 */
 
 input:focus, select:focus, textarea:focus{
 	background:#FFC;}
@@ -44,7 +44,6 @@ input:focus, select:focus, textarea:focus{
 	
 .right .bottom table tbody tr td{
 	text-align:center;
-	padding:5px 0;
 	font:normal 13px/21px "Courier New", Courier, monospace;}
 
 .right .bottom table tbody tr td a{
@@ -57,3 +56,5 @@ input:focus, select:focus, textarea:focus{
 
 .right .bottom table tbody tr td a:hover{
 	text-decoration:underline;}
+
+
