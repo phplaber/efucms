@@ -1,0 +1,164 @@
+@charset "utf-8";
+/******************************************************************************
+** STRUCTURE OF DYNAMICALLY CREATED ELEMENTS
+*******************************************************************************
+**
+** <div id="ORIGINAL_IDWidgContainer" class="widgContainer">
+**     <ul id="ORIGINAL_IDWidgToolbar" class="widgToolbar">
+**         <li id="BUTTON_ID" class="widgEditButton">
+**             <a></a>
+**         </li>
+**         <li class="widgEditSelect">
+**             <select>
+**             </select>
+**         </li>
+**     </ul>
+**     <iframe id="ORIGINAL_IDWidgIframe" class="widgIframe">
+**     </iframe>
+**     <textarea id="ORIGINAL_IDWidgTextarea" class="widgEditor">
+**     </textarea>
+** </div>
+*/
+
+/* TOOLBAR BUTTONS */
+
+.widgToolbar a
+{
+	display: block;
+	width:24px;
+	height:24px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-indent: -1000em;
+	text-decoration: none;
+}
+
+.widgToolbar a:hover
+{
+	background-position: 0 -24px;
+}
+
+.widgToolbar a:active
+{
+	margin-top:2px;
+	margin-left:2px;
+	background-position: 0 -48px;
+}
+
+.widgToolbar li.on a, .widgToolbar li.on a:hover
+{
+	background-position: 0 -48px;
+}
+.widgButtonBold
+{
+	background-image: url(../images/widgeditor_button_bold.gif);
+}
+
+.widgButtonHTML
+{
+	background-image: url(../images/widgeditor_button_html.gif);
+}
+
+.widgButtonImage 
+{
+	background-image: url(../images/widgeditor_button_image.gif);
+}
+
+.widgButtonItalic 
+{
+	background-image: url(../images/widgeditor_button_italic.gif);
+}
+
+.widgButtonLink
+{
+	background-image: url(../images/widgeditor_button_link.gif);
+}
+
+.widgButtonOrdered
+{
+	background-image: url(../images/widgeditor_button_ordered.gif);
+}
+
+.widgButtonUnordered
+{
+	background-image: url(../images/widgeditor_button_unordered.gif);
+}
+
+.widgSource a
+{
+	background-image: url(../images/widgeditor_button_empty.gif);
+	cursor: default;
+}
+
+.widgSource li.on a, .widgSource li.on a:hover
+{
+	background-position: 0 0;
+}
+
+.widgSource .widgButtonHTML
+{
+	background-image: url(../images/widgeditor_button_html.gif);
+}
+
+.widgSource .widgButtonHTML:hover
+{
+	cursor: pointer;
+}
+
+
+/* TOOLBAR */
+
+.widgToolbar
+{
+	list-style:none;
+	width:100%;
+	height:34px;
+	border-bottom:1px solid #999;
+	background:#eee;
+	margin:0 auto;
+}
+
+* html .widgToolbar
+{
+	width: auto;
+}
+
+.widgToolbar li
+{
+	display: inline;
+	float: left;
+	width:24px;
+	height:24px;
+	margin-top:5px;
+	margin-left:8px;
+}
+.widgEditSelect select {
+	height:24px;
+	padding-top:3px;
+}
+
+/* EDITING AREA */
+
+.widgIframe {
+	clear:left;
+	width:100%;
+	height:200px;
+	border:none;
+}
+.widgContainer textarea.widgEditor {
+	clear:left;
+	width:100%;
+	height:200px;
+	border:none;
+}
+
+
+/* EDITOR CONTAINER */
+
+.widgContainer {
+	border:1px solid #999;
+	padding:0;
+	margin:3px;
+	width:668px;
+	overflow:hidden;
+}

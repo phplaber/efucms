@@ -105,7 +105,7 @@ class MenuAction extends Action
 			if($obj_menu->where('id='.$_POST['id'])->save($_POST))
 			{
 				session_start();
-				$_SESSION['message_menu'] = ":)";
+				$_SESSION['message_menu'] = ":-)";
 				$this->redirect('menu/editmenu');
 			}
 			else
@@ -128,7 +128,7 @@ class MenuAction extends Action
 		if($obj_menu->add())
 		{
 			session_start();
-			$_SESSION['message_menu'] = ":)";
+			$_SESSION['message_menu'] = ":-)";
 			$this->redirect('menu/index');
 		}
 		else

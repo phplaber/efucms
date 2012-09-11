@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /*
@@ -11,9 +11,6 @@
 
 a,a:visited{
 	color: #00F;}
-
-input:focus, select:focus, textarea:focus{
-	background:#FFC;}
 
 /* for IE */
 body{
