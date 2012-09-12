@@ -88,8 +88,10 @@ class ArticleAction extends Action
 		$obj_comment->create();
 		$obj_comment->url = strpos($_POST['url'], 'http://')?$_POST['url']:'http://'.trim($_POST['url']);	// 若用户没有填写协议名，给加上
 		$obj_comment->ctime = date("Y-m-d H:i:s", time());	// 以日期的形式将当前时间写入数据库
-		$result = $obj_comment->add();
-		$this->redirect('article/index/id/'.$_POST['artid']);	// 重定向，重新加载页面。（试试：Ajax）
+		if($obj_comment->add())
+			$this->redirect('article/index/id/'.$_POST['artid']);	// 重定向，重新加载页面。（试试：Ajax）
+		else
+			exit('oops!');
 		
 	}
 }

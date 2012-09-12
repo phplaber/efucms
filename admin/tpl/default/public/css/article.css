@@ -57,4 +57,18 @@ input:focus, select:focus, textarea:focus{
 .right .bottom table tbody tr td a:hover{
 	text-decoration:underline;}
 
+.right p.prenext{
+	text-align:center;
+	margin:10px;}
+	
+.right p.prenext a{
+	font-weight:bold;
+	color:#3333FF;
+	font-size:17px;
+	text-decoration:none;}
+
+.right p.prenext span{
+	font-weight:bold;
+	font-size:13px;}
+
 
