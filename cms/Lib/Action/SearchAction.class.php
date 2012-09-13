@@ -1,9 +1,5 @@
 <?php
-/*
-**
-** 搜索页控制器
-**
-*/
+// 搜索页控制器
 class SearchAction extends Action
 {
     Public function index()
@@ -19,7 +15,6 @@ class SearchAction extends Action
 
 		$obj_content = M('Content');
 		$searchresult = $obj_content->query("SELECT id, menuid, title, ptime, description, hits FROM `efu_content` WHERE `status` = 1 and `fulltext` LIKE '%".$search."%'");
-		//print_r($searchresult);
 		for ($i = 0; $i < count($searchresult); $i++)
 		{
 			// 将标题中的搜索词高亮显示
@@ -39,10 +34,9 @@ class SearchAction extends Action
 			{
 				$menutitle = $obj_menu->where('status = 1 and id ='.$searchresult[$i]['menuid'])->field('title')->find();
 				$searchresult[$i]['menutitle'] = $menutitle['title'];
-
 				array_push($searchresult[$i]['menutitle']);
 			}
-			//print_r($searchresult);
+
 			$this->assign("searchresult", $searchresult);
 			$this->assign("search", $_POST['search']);
 		}
@@ -50,19 +44,14 @@ class SearchAction extends Action
 		// 获取友情链接数据
 		$obj_links = M('Links');
 		$links = $obj_links->where('status = 1')->limit(10)->select();
-		//print_r($links);
-		
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
 		$singlepage = $obj_singlepage->where('status = 1')->select();
-		//print_r($singlepage);
 		
 		$this->assign("menu", $menu);
 		$this->assign("links", $links);
 		$this->assign("singlepage", $singlepage);
 		$this->display('menu/search');
-		
 	}
 }
-?>

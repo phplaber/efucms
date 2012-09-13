@@ -1,9 +1,5 @@
 <?php
-/*
-**
-** 列表页控制器
-**
-*/
+// 列表页控制器
 class MenuAction extends Action
 {
     public function index()
@@ -22,7 +18,6 @@ class MenuAction extends Action
 		$page = $p->show();
 		// 根据栏目ID查找栏目下所有文章
 		$list = $obj_content->where('status =1 and menuid ='.$_GET['id'])->field('id, title, ptime, description, hits')->limit($p->firstRow.','.$p->listRows)->order('ptime DESC')->select();
-		//print_r($list);
 		// 获取每篇文章的评论数，压入数组
 		$obj_comment = M('Comment');
 		for($i=0; $i<count($list); $i++)
@@ -30,8 +25,7 @@ class MenuAction extends Action
 			$list[$i]['comment'] = $obj_comment->where('artid ='.$list[$i]['id'])->count();
 			array_push($list[$i]['comment']);
 		}
-		//print_r($list);
-		//	从内容数据表中依据'hits'字段的降序选取10篇文章
+		// 从内容数据表中依据'hits'字段的降序选取10篇文章
 		$hotarticle = $obj_content->where('status = 1')->limit('10')->order('hits DESC')->select();
 		for ($i=0; $i<10; $i++)
 		{
@@ -51,28 +45,18 @@ class MenuAction extends Action
 			$tags[$i]['keywords'] = '<span style="color:#'.dechex(rand(0,255)).dechex(rand(0,255)).dechex(rand(0,255)).';font-size:'.rand(10, 23).'px;padding:0 1px;">'.$tagslist[$i][$key].'</span>';	
 			// 用选取的关键词作为之前关键词串的代表
 		}
-		//print_r($tags);
 		$this->assign("tags", $tags);
 		
 		// 获取友情链接数据
 		$obj_links = M('Links');
 		$links = $obj_links->where('status = 1')->limit(10)->select();
-		//print_r($links);
 		$this->assign("links", $links);
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
 		$singlepage = $obj_singlepage->where('status = 1')->select();
-		//print_r($singlepage);
 		$this->assign("singlepage", $singlepage);
-		
-		
-		
-		
-		
-		
 		
 		$this->display('menu/index');
     }
 }
-?>

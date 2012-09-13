@@ -1,9 +1,5 @@
 <?php
-/*
-**
-** 内容页控制器
-**
-*/
+// 内容页控制器
 class ArticleAction extends Action
 {
     public function index()
@@ -15,7 +11,6 @@ class ArticleAction extends Action
 		// 根据文章ID获取特定文章相关信息
 		$article = $obj_content->find($_GET['id']);
 		$pro = $obj_content->where('id <'.$_GET['id'])->field('id, title')->order('id DESC')->limit(1)->find();	// 上一篇
-		//print_r($pro);
 		if ($pro == false)
 		{
 			$pro['id'] = 0;
@@ -50,12 +45,10 @@ class ArticleAction extends Action
 		// 获取友情链接数据
 		$obj_links = M('Links');
 		$links = $obj_links->where('status = 1')->limit(10)->select();
-		//print_r($links);
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
 		$singlepage = $obj_singlepage->where('status = 1')->select();
-		//print_r($singlepage);
 
 		// 显示文章评论
 		$obj_comment = M('Comment');
@@ -65,7 +58,6 @@ class ArticleAction extends Action
 		for ($i=0; $i<count($show_comment); $i++)
 			$show_comment[$i]['ctime'] = strtotime($show_comment[$i]['ctime']);
 		if ($show_comment == '') $show_comment = 0;
-		//print_r($show_comment);
 		
 		$this->assign("menu", $menu);
 		$this->assign("article", $article);
@@ -92,7 +84,5 @@ class ArticleAction extends Action
 			$this->redirect('article/index/id/'.$_POST['artid']);	// 重定向，重新加载页面。（试试：Ajax）
 		else
 			exit('oops!');
-		
 	}
 }
-?>

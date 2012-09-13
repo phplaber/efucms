@@ -1,9 +1,5 @@
 <?php
-/*
-**
-** 首页控制器
-**
-*/
+// 首页控制器
 class IndexAction extends Action
 {
     public function index()
@@ -46,19 +42,15 @@ class IndexAction extends Action
 			$tags[$i]['keywords'] = '<span style="color:#'.dechex(rand(0,255)).dechex(rand(0,255)).dechex(rand(0,255)).';font-size:'.rand(10, 23).'px;padding:0 1px;">'.$tagslist[$i][$key].'</span>';	
 			// 用选取的关键词作为之前关键词串的代表
 		}
-		//print_r($tags);
-		
-		
+			
 		// 获取友情链接数据
 		$obj_links = M('Links');
 		$links = $obj_links->where('status = 1')->limit(10)->select();
-		//print_r($links);
 		
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
 		$singlepage = $obj_singlepage->where('status = 1')->select();
-		//print_r($singlepage);
 		
 		$this->assign("tags", $tags);
 		$this->assign("hotarticle", $hotarticle);
@@ -67,4 +59,3 @@ class IndexAction extends Action
 		$this->display();
     }
 }
-?>
