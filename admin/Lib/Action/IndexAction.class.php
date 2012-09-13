@@ -1,5 +1,5 @@
 <?php
-
+// 后台模块
 class IndexAction extends Action
 {
 	// 显示登陆表单
@@ -48,7 +48,4 @@ class IndexAction extends Action
 		}
 		$this->display('index/login');
 	}
-
-
 }
-?>

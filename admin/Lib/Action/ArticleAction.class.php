@@ -1,5 +1,5 @@
 <?php
-
+// 文章管理模块
 class ArticleAction extends Action
 {
 	public function index()
@@ -11,39 +11,39 @@ class ArticleAction extends Action
 			$obj_article = M('Content');
 			$obj_menu = M('Menu');
 
-			// 查询文章表中字段menuid的值
-			$menuid = $obj_article->field('menuid')->select();
-
-			// 实现分页
-			$articlesum = count($menuid);	// 文章总数
+			// 实现分页(*每一次翻页，查询一次数据库*)
+			$articlesum = $obj_article->count();	// 文章总数
 			$articlepage = 10;	// 每页10篇文章
 			$pagesum = ceil($articlesum/$articlepage);	// 总的分页数
 			$page = $_GET['page'];	// 当前页数
 			if(!isset($page) || $page > $pagesum || $page < 1)	$page=1;
-			$article = $obj_article->field('id,menuid,title,author,ptime,hits,status')->limit(($page-1)*$articlepage.', 10')->select();
+			$article = $obj_article->field('id,menuid,title,author,ptime,hits,status')->limit(($page-1)*$articlepage.', 10')
+				->order('menuid')->select();
+			
 			// 将menuid对应的栏目名压入数组
 			for($i=0; $i<count($article); $i++)
 			{
-				$menutitle = $obj_menu->field('title')->find($menuid[$i]['menuid']);
+				$menutitle = $obj_menu->field('title')->find($article[$i]['menuid']);
 				$article[$i]['menutitle'] = $menutitle['title'];
 				array_push($article[$i]['menutitle']);
 			}
+			
 			switch($pagesum)
 			{
 				case 1:
 					$prenext = '';
-				break;
+					break;
 				
 				case 2:
 					if($page == 1)	$prenext = "<b>1</b>&nbsp;<a href='?page=2'>2</a>";
 					if($page == 2)	$prenext = "<a href='?page=1'>1</a>&nbsp;<b>2</b>";
-				break;
+					break;
 				
 				case 3:
 					if($page == 1)	$prenext = "<b>1</b>&nbsp;<a href='?page=2'>2</a>&nbsp;<a href='?page=3'>3</a>";
 					if($page == 2)	$prenext = "<a href='?page=1'>1</a>&nbsp;<b>2</b>&nbsp;<a href='?page=3'>3</a>";
 					if($page == 3)	$prenext = "<a href='?page=1'>1</a>&nbsp;<a href='?page=2'>2</a>&nbsp;<b>3</b>";
-				break;
+					break;
 				
 				default:
 					if($page == 1)	$prenext = "Start&nbsp;Prev&nbsp;<b>1</b>&nbsp;<a href='?page=2'>2</a>&nbsp;<a href='?page=3'>3</a>&nbsp;<a href='?page=2'>Next</a>&nbsp;<a href='?page=".$pagesum."'>End</a>";
@@ -62,7 +62,6 @@ class ArticleAction extends Action
 				unset($_SESSION['message_article']);
 			}
 			$this->display();
-			//print_r($article);
 
 		}
 	}
@@ -92,7 +91,6 @@ class ArticleAction extends Action
 		else
 		{
 			array_pop($_POST);
-			//print_r($_POST);
 			$obj_article=M('Content');
 			foreach ($_POST as $value)
 				$arr = $value;
@@ -102,7 +100,7 @@ class ArticleAction extends Action
 					exit('oops!');
 			}
 			session_start();
-			$_SESSION['message_article'] = ":)";
+			$_SESSION['message_article'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 			$this->redirect('article/index');
 		}
 	}
@@ -119,7 +117,7 @@ class ArticleAction extends Action
 			$obj_menu = M('Menu');
 			$article = $obj_article->find($aid);
 			$menu = $obj_menu->field('id,title')->select();
-			//print_r($article);
+
 			$this->assign("aid", $aid);
 			$this->assign("article", $article);
 			$this->assign("menu", $menu);
@@ -151,7 +149,7 @@ class ArticleAction extends Action
 			if(!$obj_article->add($_POST))
 				exit('oops!');
 			session_start();
-			$_SESSION['message_article'] = ":)";
+			$_SESSION['message_article'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 			$this->redirect('article/index');
 		}
 	}
@@ -167,16 +165,15 @@ class ArticleAction extends Action
 			if($obj_article->where('id='.$_POST['id'])->save($_POST))
 			{
 				session_start();
-				$_SESSION['message_article'] = ":)";
+				$_SESSION['message_article'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 				$this->redirect('article/index');
 			}
 			else
 			{
 				session_start();
-				$_SESSION['message_article'] = "<span style='color:#fff;background:red;'>:(</span>";
+				$_SESSION['message_article'] = "<span style='color:#fff;background:#FF0000;'>:(</span>";
 				$this->redirect('article/index');
 			}
 		}
 	}
 }
-?>

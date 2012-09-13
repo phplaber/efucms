@@ -1,5 +1,5 @@
 <?php
-/* 网站配置模块 */
+// 网站配置模块
 class ConfigAction extends Action
 {
 	public function index()
@@ -29,7 +29,6 @@ class ConfigAction extends Action
 		{
 			$config = require "config.php";
 
-			//print_r($config);
 			$str_config = "<?php return array('DB_PWD'=>'198802102357',";
 			array_push($_POST, $_POST['__hash__']=0);
 			array_pop($_POST);
@@ -37,7 +36,6 @@ class ConfigAction extends Action
 			foreach($_POST as $key=>$value)
 			{
 				$key = strtoupper($key);
-				//$value = addslashes($value);
 				if(trim($value) != $config[$key])
 					$config[$key] = trim($value);
 				$str_config .= "'".$key."'=>"."'".$config[$key]."',";
@@ -58,4 +56,3 @@ class ConfigAction extends Action
 		}
 	}
 }
-?>

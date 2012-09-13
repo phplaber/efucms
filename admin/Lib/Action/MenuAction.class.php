@@ -1,5 +1,5 @@
 <?php
-
+// 栏目管理模块
 class MenuAction extends Action
 {
 	public function index()
@@ -16,7 +16,6 @@ class MenuAction extends Action
 				$menuitem[$i]['articlesum'] = $obj_content->where('menuid='.$menuitem[$i]['id'])->count();
 				array_push($menuitem[$i]['articlesum']);
 			}
-			//print_r($menuitem);
 			$this->assign("menuitem", $menuitem);
 
 			// 如果保存成功，返回信息
@@ -39,9 +38,7 @@ class MenuAction extends Action
 			$obj_menu = M('Menu');
 			$menuid = $_GET['id'];
 			$menu = $obj_menu->find($menuid);
-			//print_r($menu);
 			$menuordering = $obj_menu->field('title,ordering')->select();
-			//print_r($menuordering);
 			$this->assign("menu", $menu);
 			$this->assign("ordering", $menuordering);
 
@@ -53,7 +50,6 @@ class MenuAction extends Action
 			}
 
 			$this->display('menu/edit');
-
 		}
 	}
 
@@ -82,7 +78,6 @@ class MenuAction extends Action
 			array_pop($_POST);
 			foreach($_POST as $value)
 				$arr = $value;
-			//print_r($arr);
 			for($i=0; $i<count($arr); $i++)
 			{
 				if(!$obj_menu->where('id='.$arr[$i])->delete())
@@ -139,4 +134,3 @@ class MenuAction extends Action
 		}
 	}
 }
-?>
