@@ -24,7 +24,6 @@ class MenuAction extends Action
 				$this->assign("message_menu", $_SESSION['message_menu']);
 				unset($_SESSION['message_menu']);
 			}
-
 			$this->display();
 		}
 	}
@@ -48,7 +47,6 @@ class MenuAction extends Action
 				$this->assign("message_menu", $_SESSION['message_menu']);
 				unset($_SESSION['message_menu']);
 			}
-
 			$this->display('menu/edit');
 		}
 	}
@@ -84,7 +82,7 @@ class MenuAction extends Action
 					exit('出现错误');
 			}
 			session_start();
-			$_SESSION['message_menu'] = ":)";
+			$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 			$this->redirect('menu/index');
 		}
 	}
@@ -100,7 +98,7 @@ class MenuAction extends Action
 			if($obj_menu->where('id='.$_POST['id'])->save($_POST))
 			{
 				session_start();
-				$_SESSION['message_menu'] = ":)";
+				$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 				$this->redirect('menu/editmenu');
 			}
 			else
@@ -123,7 +121,7 @@ class MenuAction extends Action
 		if($obj_menu->add())
 		{
 			session_start();
-			$_SESSION['message_menu'] = ":)";
+			$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
 			$this->redirect('menu/index');
 		}
 		else
