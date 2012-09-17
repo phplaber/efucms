@@ -62,7 +62,6 @@ class ArticleAction extends Action
 				unset($_SESSION['message_article']);
 			}
 			$this->display();
-
 		}
 	}
 

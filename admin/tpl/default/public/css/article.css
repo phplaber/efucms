@@ -59,7 +59,8 @@ input:focus, select:focus, textarea:focus{
 
 .right p.prenext{
 	text-align:center;
-	margin:10px;}
+	margin:10px;
+	font-size:13px;}
 	
 .right p.prenext a{
 	color:#3333FF;
