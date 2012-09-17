@@ -1,0 +1,72 @@
+/* 评论管理样式表 */
+
+input:focus, select:focus, textarea:focus{
+	background:#FFC;}
+	
+#container .right{
+	float:right;
+	width:73%;
+	border:2px solid #FC6;}
+
+.right .top{
+	margin:10px 10px 30px 10px;}
+
+.right .top table tbody tr td p.title{
+	font-weight:bold;
+	color:#0B55C4;}
+
+.right .top table tbody tr td a{
+	text-decoration:none;
+	color:#3333FF;
+	font-weight:bold;
+	font-size:13px;}
+
+.right .top table tbody tr td a:visited{
+	color:#3333FF;}
+	
+.right .top table tbody tr td a:hover{
+	text-decoration:underline;}
+	
+.right .bottom>ul{
+	list-style:none;
+	padding:10px;}
+
+.right .bottom ul li ul{
+	list-style:none;
+	margin:10px 0;
+	border-bottom:1px dashed #FC6;}
+
+.right .bottom ul li ul li{
+	padding:3px 0;
+	font-size:13px;}
+
+.right .bottom ul li ul li a{
+	color:#3333FF;
+	text-decoration:none;}
+	
+.right .bottom ul li ul li a:hover{
+	text-decoration:underline;}
+
+.right .bottom ul li ul li a.delete:hover{
+	background:#F00;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold;}
+	
+.right p.prenext{
+	text-align:center;
+	margin:10px;
+	font-size:13px;}
+	
+.right p.prenext a{
+	color:#3333FF;
+	font-size:13px;
+	text-decoration:none;}
+
+.right p.prenext a:hover{
+	text-decoration:underline;}
+
+.right p.prenext span{
+	font-weight:bold;
+	font-size:13px;}
+	

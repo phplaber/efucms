@@ -1,0 +1,48 @@
+/* 评论编辑样式表 */
+
+input:focus, select:focus, textarea:focus{
+	background:#FFC;}
+	
+#container .right{
+	float:right;
+	width:73%;
+	border:2px solid #FC6;}
+
+.right p.title{
+	margin:10px 10px 30px 10px;
+	font-weight:bold;
+	color:#0B55C4;}
+
+.right p.title span{
+	font-size:13px;}
+
+.editcomment, .submitform{
+	margin:15px 10px;}
+
+fieldset{
+	text-align:left;}
+
+legend {
+    color:#0B55C4;
+    font-size:13px;
+    font-weight:bold;}
+
+.editcomment input[type=text], select{
+	font-size:11px;}
+
+.editcomment table tr td{
+	font-size:13px;}
+	
+.editcomment table tr td:first-child{
+	width:150px;
+	padding:5px 0;
+	text-align:right;
+	font-size:12px;
+	font-weight:bold;
+	color: #666666;
+	background-color:#F6F6F6;}
+
+.submitform table tr td{
+	width:50px;}
+
+
