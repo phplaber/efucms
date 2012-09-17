@@ -52,7 +52,7 @@ class ArticleAction extends Action
 
 		// 显示文章评论
 		$obj_comment = M('Comment');
-		$show_comment = $obj_comment->where('artid ='.$_GET['id'])->field('id, cname, ctime, ctext, url')->order('ctime DESC')->select();
+		$show_comment = $obj_comment->where('artid ='.$_GET['id'])->field('id, cname, ctime, ctext, reply, url')->order('ctime DESC')->select();
 
 		// 将日期转换为时间戳，以便进行日期自定义格式输出
 		for ($i=0; $i<count($show_comment); $i++)
@@ -78,7 +78,6 @@ class ArticleAction extends Action
 	{
 		$obj_comment = M('Comment');
 		$obj_comment->create();
-		$obj_comment->url = strpos($_POST['url'], 'http://')?$_POST['url']:'http://'.trim($_POST['url']);	// 若用户没有填写协议名，给加上
 		$obj_comment->ctime = date("Y-m-d H:i:s", time());	// 以日期的形式将当前时间写入数据库
 		if($obj_comment->add())
 			$this->redirect('article/index/id/'.$_POST['artid']);	// 重定向，重新加载页面。（试试：Ajax）

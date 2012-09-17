@@ -107,6 +107,10 @@ p.ctime{
 	font: 13px/23px "宋体";
 	color: #999;}
 
+p.reply{
+	color:#FF9933;
+	font-size:12px;}
+
 div.comment div.post_comment p{
 	margin-bottom: 7px;}
 	

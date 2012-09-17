@@ -66,7 +66,10 @@
                     <else/>{$vo.cname}&nbsp;说：
                     </if></p>
                     <p class="ctext">{$vo.ctext}</p>
-                    <p class="ctime">{$vo.ctime|date="m-d-Y H:i", ###} - {$vo.id}楼</p>
+                    <p class="ctime">{$vo.ctime|date="Y-m-d H:i", ###} - {$vo.id}楼</p>
+                    <if condition="$vo.reply neq null"><p class="reply">管理员回复：{$vo.reply}</p>
+                    <else/>
+                    </if>
                 </li>
             </volist>
         </ul>
@@ -91,7 +94,7 @@
         </p>
         <p>
         	<label for="url"><small>博客URL</small></label><br/>
-            <input type="text" id="url" name="url" value="" size="23"/>
+            <input type="text" id="url" name="url" value="http://" size="23"/>
         </p>
         <p class="submit"><input type="submit" name="post" value="提交发表" />&nbsp;&nbsp;&nbsp;&nbsp;<small style="font-size:12px;color:#ccc;">如果评论未显示，请等待审核。</small></p>
         </form>
