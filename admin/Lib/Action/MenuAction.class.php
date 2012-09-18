@@ -59,7 +59,7 @@ class MenuAction extends Action
 		{
 			$obj_menu = M('Menu');
 			$menuid = $obj_menu->query("SELECT MAX(id) AS id FROM __TABLE__");
-			$menuordering = $obj_menu->field('title,ordering')->select();
+			$menuordering = $obj_menu->field('title,ordering')->order('ordering ASC')->select();
 			$this->assign("ordering", $menuordering);
 			$this->assign("menuid", $menuid[0]['id']+1);
 			$this->display('menu/add');
