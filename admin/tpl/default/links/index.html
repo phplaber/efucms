@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{&APP_NAME} — 管理后台</title>
+<link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/links.css" />
+</head>
+
+<body>
+<!-- begin header -->
+<div id="header">
+	<include file="public:header"/>
+</div>
+<!-- //end header -->
+
+<!-- begin container -->
+<div id="container">
+<div class="left">
+	<include file="public:menu"/>
+</div>
+<div class="right">
+<div class="top">
+<table cellpadding="0" cellspacing="1">
+<tbody>
+<tr>
+<td width="595px"><p class="title"><img src="../Public/image/menu.png" style="vertical-align: middle"/>&nbsp;友链管理</p></td>
+<td><a href="{:U('links/addLinks')}">创建</a></td>
+</tr>
+</tbody>
+</table>
+<h3 style="color:#33CC00;margin:10px;">{$message_links}</h3>
+</div>
+<div class="bottom">
+<table cellpadding="0" cellspacing="1">
+<tbody>
+<tr>
+<th>ID</th>
+<th>网站</th>
+<th>状态</th>
+<th colspan="2">操作</th>
+</tr>
+<volist name="links" id="vo">
+<tr>
+<td>{$vo.id}</td>
+<td><a href="{$vo.url}">{$vo.title}</a></td>
+<td>
+<if condition="$vo.status eq 1"><img src="../Public/image/tick.png" style="vertical-align: middle"/>
+<else/><img src="../Public/image/publish_x.png" style="vertical-align: middle"/>
+</if></td>
+<td><a href="{:U('links/editLinks/id/'.$vo['id'])}">编辑</a></td>
+<td><a href="{:U('links/deleteLinks/id/'.$vo['id'])}">删除</a></td>
+</tr>
+</volist>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<!-- //end container -->
+
+<div class="clear"></div>
+
+<!-- begin footer -->
+<div id="footer">
+	<include file="public:footer"/>
+</div>
+<!-- //end footer -->
+</body>
+</html>
