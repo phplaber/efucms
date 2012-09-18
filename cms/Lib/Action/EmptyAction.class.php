@@ -16,7 +16,7 @@ class EmptyAction extends Action
 		
 		// 获取友情链接数据
 		$obj_links = M('Links');
-		$links = $obj_links->where('status = 1')->limit(10)->select();
+		$links = $obj_links->where('status = 1')->limit(10)->order('ordering ASC')->select();
 		
 		$this->assign("menu", $menu);
 		$this->assign("singlepage_special", $singlepage_special);

@@ -44,7 +44,7 @@ class ArticleAction extends Action
 		
 		// 获取友情链接数据
 		$obj_links = M('Links');
-		$links = $obj_links->where('status = 1')->limit(10)->select();
+		$links = $obj_links->where('status = 1')->limit(10)->order('ordering ASC')->select();
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
