@@ -30,11 +30,18 @@ class LinksAction extends Action
 		else
 		{
 			$obj_links = M('Links');
-			if(!$obj_links->where('id='.$_GET['id'])->delete())
-				exit('出现错误');
-			session_start();
-			$_SESSION['message_links'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
-			$this->redirect('links/index');
+			if($obj_links->where('id='.$_GET['id'])->delete())
+			{
+				session_start();
+				$_SESSION['message_links'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
+				$this->redirect('links/index');
+			}
+			else
+			{
+				session_start();
+				$_SESSION['message_links'] = "<span style='color:#fff;background:red;'>:(</span>";
+				$this->redirect('links/index');
+			}
 		}
 	}
 
@@ -47,7 +54,12 @@ class LinksAction extends Action
 		{
 			$obj_links = M('Links');
 			$links = $obj_links->find($_GET['id']);
-			print_r($links);
+			$linksordering = $obj_links->field('title,ordering')->select();
+			//print_r($links);
+			$this->assign("links", $links);
+			$this->assign("ordering", $linksordering);
+
+			$this->display('links/edit');
 			
 		}
 	}
@@ -82,6 +94,29 @@ class LinksAction extends Action
 			// 在排序时，新建友链排序数为选择项排序数加1
 			$obj_links->ordering += 1;
 			if($obj_links->add())
+			{
+				session_start();
+				$_SESSION['message_links'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
+				$this->redirect('links/index');
+			}
+			else
+			{
+				session_start();
+				$_SESSION['message_links'] = "<span style='color:#fff;background:red;'>:(</span>";
+				$this->redirect('links/index');
+			}
+		}
+	}
+
+	// 更新友链
+	public function update()
+	{
+		if (!isset($_SESSION['uid']))
+			$this->redirect('index/index');	// 重定向到index模块的index操作
+		else
+		{
+			$obj_links = M('Links');
+			if($obj_links->where('id='.$_POST['id'])->save($_POST))
 			{
 				session_start();
 				$_SESSION['message_links'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";

@@ -20,10 +20,10 @@
 	<include file="public:menu"/>
 </div>
 <div class="right">
-<p class="title"><img src="../Public/image/menu.png" style="vertical-align: middle"/>&nbsp;友链管理<span>[创建]</span></p>
+<p class="title"><img src="../Public/image/menu.png" style="vertical-align: middle"/>&nbsp;友链管理<span>[编辑]</span></p>
 
-<form name="links" method="post" action="__URL__/add" onsubmit="return checkForm();">
-<input type="hidden" name="id" value="{$linksid}"/>
+<form name="links" method="post" action="__URL__/update" onsubmit="return checkForm();">
+<input type="hidden" name="id" value="{$links.id}"/>
 <div class="editlinks">
 <fieldset>
 <legend>友链项</legend>
@@ -31,19 +31,19 @@
 <tbody>
 <tr>
 <td>ID</td>
-<td>&nbsp;<small>{$linksid}</small></td>
+<td>&nbsp;<small>{$links.id}</small></td>
 </tr>
 <tr>
 <td>网站</td>
-<td>&nbsp;<input type="text" name="title" id="title" value="http://" size="27"/></td>
+<td>&nbsp;<input type="text" name="title" id="title" value="{$links.title}" size="27"/></td>
 </tr>
 <tr>
 <td>URL</td>
-<td>&nbsp;<input type="text" name="url" id="url" value="" size="27"/></td>
+<td>&nbsp;<input type="text" name="url" id="url" value="{$links.url}" size="27"/></td>
 </tr>
 <tr>
 <td>Email</td>
-<td>&nbsp;<input type="text" name="email" id="email" value="" size="27"/></td>
+<td>&nbsp;<input type="text" name="email" id="email" value="{$links.email}" size="27"/></td>
 </tr>
 <tr>
 <td>是否发布</td>
@@ -55,16 +55,18 @@
 </tr>
 <tr>
 <td>排序</td>
-<td>&nbsp;<select name="ordering" id="ordering">
+<td>&nbsp;<select name="ordering">
 <volist name="ordering" id="vo">
-<option value="{$vo.ordering}">{$vo.ordering}&nbsp;{$vo.title}</option>
+<if condition="$vo.ordering eq $links['ordering']"><option value="{$vo.ordering}" selected="selected">{$vo.ordering}&nbsp;{$vo.title}</option>
+<else/><option value="{$vo.ordering}">{$vo.ordering}&nbsp;{$vo.title}</option>
+</if>
 </volist>
 </select>
 </td>
 </tr>
 <tr>
 <td>简介</td>
-<td>&nbsp;<textarea name="info" id="info" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;"></textarea></td>
+<td>&nbsp;<textarea name="info" id="info" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$links.info}</textarea></td>
 </tr>
 </tbody>
 </table>
