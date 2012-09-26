@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{&APP_NAME} — 管理后台</title>
 <link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
-<link rel="stylesheet" type="text/css" href="../Public/css/links.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/article.css" />
 </head>
 
 <body>
@@ -21,40 +21,40 @@
 </div>
 <div class="right">
 <div class="top">
+<form id="article" method="post" action="__URL__/deletesinglepage">
 <table cellpadding="0" cellspacing="1">
 <tbody>
 <tr>
-<td width="595px"><p class="title"><img src="../Public/image/links.jpg" style="vertical-align: middle"/>&nbsp;友链管理</p></td>
-<td><a href="{:U('links/addLinks')}">创建</a></td>
+<td width="595px"><p class="title"><img src="../Public/image/article.png" style="vertical-align: middle"/>&nbsp;单页管理</p></td>
+<td><a href="{:U('singlepage/addsinglepage')}">创建</a>&nbsp;&nbsp;<a onclick="checkForm();" style="cursor:pointer">删除</a></td>
 </tr>
 </tbody>
 </table>
-<h3 style="color:#33CC00;margin:10px;">{$message_links}</h3>
+<h3 style="color:#33CC00;margin:10px;">{$message_singlepage}</h3>
 </div>
 <div class="bottom">
 <table cellpadding="0" cellspacing="1">
 <tbody>
 <tr>
-<th>ID</th>
-<th>网站</th>
-<th>状态</th>
-<th colspan="2">操作</th>
+<th width="10%">ID</th>
+<th width="10%">勾选</th>
+<th width="70%">标题</th>
+<th width="10%">状态</th>
 </tr>
-<volist name="links" id="vo">
+<volist name="singlepage" id="vo">
 <tr>
 <td>{$vo.id}</td>
-<td><a href="{$vo.url}">{$vo.title}</a></td>
+<td><input type="checkbox" name="articlebox[]" value="{$vo.id}"/></td>
+<td style="text-align:center;padding:5px 0;"><a href="{:U('singlepage/editsinglepage/id/'.$vo['id'])}">{$vo.title}</a></td>
 <td>
 <if condition="$vo.status eq 1"><img src="../Public/image/tick.png" style="vertical-align: middle"/>
 <else/><img src="../Public/image/publish_x.png" style="vertical-align: middle"/>
 </if></td>
-<td><a href="{:U('links/editLinks/id/'.$vo['id'])}">编辑</a></td>
-<td><a href="{:U('links/deleteLinks/id/'.$vo['id'])}" class="delete">删除</a></td>
 </tr>
 </volist>
 </tbody>
 </table>
-
+</form>
 </div>
 </div>
 </div>
@@ -67,5 +67,30 @@
 	<include file="public:footer"/>
 </div>
 <!-- //end footer -->
+<script type="text/javascript">
+function checkForm()
+{
+	var str=document.getElementsByName("articlebox[]");
+	var length=str.length;
+	var value="";
+	for(i=0; i<length; i++)
+	{
+		if(str[i].checked == true)
+		{
+			value += str[i].value;
+		}
+	}
+	if(value=="")
+	{
+		alert("请选择要删除的文章");
+		return false;
+	}
+	else
+	{
+		document.getElementById("article").submit();
+		return true;
+	}
+}
+</script>
 </body>
 </html>

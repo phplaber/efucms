@@ -4,9 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{&APP_NAME} — 管理后台</title>
 <link rel="stylesheet" type="text/css" href="../Public/css/public.css" />
-<link rel="stylesheet" type="text/css" href="../Public/css/editlinks.css" />
+<link rel="stylesheet" type="text/css" href="../Public/css/editarticle.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/widgEditor.css">
+<script type="text/javascript" src="__PUBLIC__/js/widgEditor.js"></script>
 </head>
-
 <body>
 <!-- begin header -->
 <div id="header">
@@ -20,54 +21,47 @@
 	<include file="public:menu"/>
 </div>
 <div class="right">
-<p class="title"><img src="../Public/image/links.jpg" style="vertical-align: middle"/>&nbsp;友链管理<span>[创建]</span></p>
+<p class="title"><img src="../Public/image/article.png" style="vertical-align: middle"/>&nbsp;单页管理<span>[编辑]</span></p>
 
-<form name="links" method="post" action="__URL__/add" onsubmit="return checkForm();">
-<input type="hidden" name="id" value="{$linksid}"/>
-<div class="editlinks">
+<form name="editsinglepage" method="post" action="__URL__/update" onsubmit="return checkForm();">
+<input type="hidden" name="id" value="{$sid}"/>
+<div class="editarticle">
 <fieldset>
-<legend>友链项</legend>
+<legend>元信息</legend>
 <table>
 <tbody>
 <tr>
 <td>ID</td>
-<td>&nbsp;<small>{$linksid}</small></td>
+<td>&nbsp;<small>{$sid}</small></td>
 </tr>
 <tr>
-<td>网站</td>
-<td>&nbsp;<input type="text" name="title" id="title" value="" size="27"/></td>
-</tr>
-<tr>
-<td>URL</td>
-<td>&nbsp;<input type="text" name="url" id="url" value="http://" size="27"/></td>
-</tr>
-<tr>
-<td>Email</td>
-<td>&nbsp;<input type="text" name="email" id="email" value="" size="27"/></td>
+<td>标题</td>
+<td>&nbsp;<input type="text" name="title" id="title" value="{$singlepage.title}"/></td>
 </tr>
 <tr>
 <td>是否发布</td>
-<td>&nbsp;<if condition="$links.status eq 1"><input type="radio" name="status" id="status" value="1" checked="checked"/>&nbsp;<small>是</small>
+<td>&nbsp;
+<if condition="$singlepage.status eq 1"><input type="radio" name="status" id="status" value="1" checked="checked"/>&nbsp;<small>是</small>
 <input type="radio" name="status" id="status" value="0"/>&nbsp;<small>否</small>
 <else/><input type="radio" name="status" id="status" value="1"/>&nbsp;<small>是</small>
 <input type="radio" name="status" id="status" value="0" checked="checked"/>&nbsp;<small>否</small>
 </if></td>
 </tr>
 <tr>
-<td>排序</td>
-<td>&nbsp;<select name="ordering" id="ordering">
-<volist name="ordering" id="vo">
-<option value="{$vo.ordering}">{$vo.ordering}&nbsp;{$vo.title}</option>
-</volist>
-</select>
-</td>
+<td>关键词</td>
+<td>&nbsp;<textarea name="keywords" id="keywords" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$singlepage.keywords}</textarea></td>
 </tr>
 <tr>
-<td>简介</td>
-<td>&nbsp;<textarea name="info" id="info" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;"></textarea></td>
+<td>描述</td>
+<td>&nbsp;<textarea name="description" id="description" rows="3" cols="50" style="width:400px;height:50px;font-size:11px;">{$singlepage.description}</textarea></td>
 </tr>
 </tbody>
 </table>
+</fieldset>
+<br/>
+<fieldset>
+<legend>正文</legend>
+<textarea id="fulltext" name="fulltext" class="widgEditor">{$singlepage.fulltext}</textarea>
 </fieldset>
 </div>
 
@@ -98,16 +92,10 @@ function checkForm()
 {
 	if(document.getElementById("title").value =="")
 	{
-		alert("请填写网站标题");
+		alert("文章必须有一个标题");
 		document.getElementById("title").focus();
 		return false;
 	}	
-	if(document.getElementById("url").value =="")
-	{
-		alert("请填写网站URL");
-		document.getElementById("url").focus();
-		return false;
-	}
 }
 </script>
 </body>
