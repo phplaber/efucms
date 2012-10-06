@@ -48,7 +48,7 @@ class ArticleAction extends Action
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
-		$singlepage = $obj_singlepage->where('status = 1')->select();
+		$singlepage = $obj_singlepage->where('status = 1')->order('id ASC')->select();
 
 		// 显示文章评论
 		$obj_comment = M('Comment');

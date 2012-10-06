@@ -47,7 +47,7 @@ class SearchAction extends Action
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
-		$singlepage = $obj_singlepage->where('status = 1')->select();
+		$singlepage = $obj_singlepage->where('status = 1')->order('id ASC')->select();
 		
 		$this->assign("menu", $menu);
 		$this->assign("links", $links);

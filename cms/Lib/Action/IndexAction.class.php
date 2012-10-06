@@ -50,7 +50,7 @@ class IndexAction extends Action
 		
 		// 获取单页数据
 		$obj_singlepage = M('Singlepage');
-		$singlepage = $obj_singlepage->where('status = 1')->select();
+		$singlepage = $obj_singlepage->where('status = 1')->order('id ASC')->select();
 		
 		$this->assign("tags", $tags);
 		$this->assign("hotarticle", $hotarticle);

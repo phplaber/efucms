@@ -35,18 +35,11 @@ class MenuAction extends Action
 		else
 		{
 			$obj_menu = M('Menu');
-			$menuid = $_GET['id'];
-			$menu = $obj_menu->find($menuid);
+			$menu = $obj_menu->find($_GET['id']);
 			$menuordering = $obj_menu->field('title,ordering')->select();
 			$this->assign("menu", $menu);
 			$this->assign("ordering", $menuordering);
 
-			// 如果保存成功，返回信息
-			if(isset($_SESSION['message_menu']))
-			{
-				$this->assign("message_menu", $_SESSION['message_menu']);
-				unset($_SESSION['message_menu']);
-			}
 			$this->display('menu/edit');
 		}
 	}
@@ -99,13 +92,13 @@ class MenuAction extends Action
 			{
 				session_start();
 				$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
-				$this->redirect('menu/editmenu');
+				$this->redirect('menu/index');
 			}
 			else
 			{
 				session_start();
 				$_SESSION['message_menu'] = "<span style='color:#fff;background:red;'>:(</span>";
-				$this->redirect('menu/editmenu');
+				$this->redirect('menu/index');
 			}
 		}
 	}
@@ -113,22 +106,27 @@ class MenuAction extends Action
 	// 新增菜单
 	public function add()
 	{
-		$obj_menu = M('menu');
-		$obj_menu->create();
-
-		// 在排序时，新建菜单排序数为选择项排序数加1
-		$obj_menu->ordering += 1;
-		if($obj_menu->add())
-		{
-			session_start();
-			$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
-			$this->redirect('menu/index');
-		}
+		if (!isset($_SESSION['uid']))
+			$this->redirect('index/index');	// 重定向到index模块的index操作
 		else
 		{
-			session_start();
-			$_SESSION['message_menu'] = "<span style='color:#fff;background:red;'>:(</span>";
-			$this->redirect('menu/index');
+			$obj_menu = M('menu');
+			$obj_menu->create();
+
+			// 在排序时，新建菜单排序数为选择项排序数加1
+			$obj_menu->ordering += 1;
+			if($obj_menu->add())
+			{
+				session_start();
+				$_SESSION['message_menu'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
+				$this->redirect('menu/index');
+			}
+			else
+			{
+				session_start();
+				$_SESSION['message_menu'] = "<span style='color:#fff;background:red;'>:(</span>";
+				$this->redirect('menu/index');
+			}
 		}
 	}
 }

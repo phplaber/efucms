@@ -95,13 +95,6 @@ class CommentAction extends Action
 			array_push($comment['title']);	// 将所评论的文章标题写入数组
 
 			$this->assign("comment", $comment);
-
-			// 如果保存成功，返回信息
-			if(isset($_SESSION['message_comment']))
-			{
-				$this->assign("message_comment", $_SESSION['message_comment']);
-				unset($_SESSION['message_comment']);
-			}
 			$this->display('comment/edit');
 		}
 	}
@@ -118,13 +111,13 @@ class CommentAction extends Action
 			{
 				session_start();
 				$_SESSION['message_comment'] = "<span style='color:#fff;background:#33CC00;'>:)</span>";
-				$this->redirect('comment/editComment');
+				$this->redirect('comment/index');
 			}
 			else
 			{
 				session_start();
 				$_SESSION['message_comment'] = "<span style='color:#fff;background:red;'>:(</span>";
-				$this->redirect('comment/editComment');
+				$this->redirect('comment/index');
 			}
 		}
 	}

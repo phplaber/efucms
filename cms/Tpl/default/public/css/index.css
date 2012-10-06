@@ -19,12 +19,16 @@ body{
 	width:960px;
 	text-align:left;}
 
-h5{
+#container .left h5{
+	position:relative;
 	background:#F93;
-	padding:5px;
-	position:relative;}
+	height:21px;}
 
-h5 a{
+#container .left h5 span{
+	padding:3px 5px;
+	display:inline-block;}
+
+#container .left h5 a{
 	position:absolute;
 	top:0;
 	right:5px;
@@ -49,6 +53,9 @@ h5 a{
 	float:right;}
 	
 .menu3, .menu4{
+	margin-top:10px;}
+
+#container .left ul{
 	margin-top:10px;}
 	
 .menu1 ul li, .menu2 ul li, .menu3 ul li, .menu4 ul li{

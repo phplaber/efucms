@@ -10,6 +10,9 @@
 	background:#fff;
 	padding-bottom:10px;}
 
+#header h1 img{
+	border:none;}
+
 #header table tr td{
 	width:70px;
 	height:30px;

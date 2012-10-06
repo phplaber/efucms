@@ -12,7 +12,7 @@ class EmptyAction extends Action
 		// 获取某一单页文章相关信息
 		$singlepage_special = $obj_singlepage->where('status = 1 and alias = "'.MODULE_NAME.'"')->find();
 		// 获取单页文章数据
-		$singlepage = $obj_singlepage->where('status = 1')->field('title, alias')->select();
+		$singlepage = $obj_singlepage->field('title, alias')->where('status = 1')->order('id ASC')->select();
 		
 		// 获取友情链接数据
 		$obj_links = M('Links');

@@ -120,12 +120,7 @@ class ArticleAction extends Action
 			$this->assign("aid", $aid);
 			$this->assign("article", $article);
 			$this->assign("menu", $menu);
-			// 如果保存成功，返回信息
-			if(isset($_SESSION['message_article']))
-			{
-				$this->assign("message_article", $_SESSION['message_article']);
-				unset($_SESSION['message_article']);
-			}
+			
 			$this->display('article/edit');
 		}
 	}
@@ -140,8 +135,8 @@ class ArticleAction extends Action
 			$obj_article = M('Content');
 			array_pop($_POST);
 			array_pop($_POST);
-			$_POST = array_filter($_POST);
 			array_push($_POST['fulltextWidgToolbarSelectBlock'] = false);
+			$_POST = array_filter($_POST);
 			array_push($_POST['ptime'] = date("Y-m-d H:i:s", time()));
 			array_push($_POST['hits'] = 0);
 

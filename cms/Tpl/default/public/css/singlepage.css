@@ -28,3 +28,20 @@ body{
 #container{
 	height: 300px;
 	background: #F5F5F5;}
+	
+#container h4{
+	text-align:center;
+	padding:30px 0;}
+
+#container p{
+	font-size:13px;
+	line-height:21px;
+	text-indent:2em;
+	padding:5px 10px;}
+
+#container ul{
+	margin-left:30px;}
+
+#container ul li{
+	font-size:13px;
+	padding:5px 10px;}
