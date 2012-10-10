@@ -2,7 +2,7 @@
 efucms
 ======
 
-![efucms](https://github.com/phplaber/efucms/blob/master/logo.png "Easy for use CMS")
+![efucms](https://raw.github.com/phplaber/efucms/master/logo.png "Easy for use CMS")
 
 说明
 ---
