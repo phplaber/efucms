@@ -4,7 +4,7 @@ if (!defined('THINK_PATH')) exit();
 $config = require "config.php";
 
 $config_list = array(
-	'URL_MODEL'      => 2,
+	'URL_MODEL'      => 2,	// REWRITE模式
 	'URL_ROUTER_ON' => true,	// 开启URL路由
 	'URL_ROUTE_RULES' => array(array('Index', 'Index/singlepage', 'name')),	// 定义URL路由规则
 	'URL_HTML_SUFFIX' => '.html',	// 设置URL伪静态后缀
