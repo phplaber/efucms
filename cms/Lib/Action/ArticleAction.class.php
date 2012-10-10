@@ -10,6 +10,11 @@ class ArticleAction extends Action
 		$obj_content = M('Content');
 		// 根据文章ID获取特定文章相关信息
 		$article = $obj_content->find($_GET['id']);
+		
+		// 更新页面浏览量到数据库
+		$article['hits']++;
+		$obj_content->save($article);
+
 		$pro = $obj_content->where('id <'.$_GET['id'])->field('id, title')->order('id DESC')->limit(1)->find();	// 上一篇
 		if ($pro == false)
 		{

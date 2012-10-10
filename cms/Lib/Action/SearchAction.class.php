@@ -6,10 +6,7 @@ class SearchAction extends Action
 	{
 		$search = addslashes(trim($_POST['search']));
 		if (!$search)
-		{
-			// TO DO
-			exit('sorry');
-		}
+			exit('<b>Please input valid keywords!</b>');
 		$obj_menu = M('Menu');
 		$menu = $obj_menu->where('status = 1')->order('ordering ASC')->select();
 
