@@ -2,12 +2,12 @@
 efucms
 ======
 
-![efucms](./logo.png "Easy for use CMS")
+![efucms](https://github.com/phplaber/efucms/blob/master/logo.png "Easy for use CMS")
 
 说明
 ---
 
-这是一个简单易用的内容管理系统（easy for use cms），基于[ThinkPHP框架](http://www.thinkphp.cn/ "基于PHP的Web开发框架")开发。efucms具备了内容管理系统的大多最基本的功能，包括栏目管理，文章管理等。如果你想迅速搭建起一个小型的内容发布网站，efucms不失为一个好的选择。你可以根据自己的需要，随意地对代码进行任何修改，因为efucms是开源的。
+这是一个简单易用的内容管理系统（easy for use cms），基于[ThinkPHP](http://www.thinkphp.cn/)开发。efucms具备了内容管理系统的大多最基本的功能，包括栏目管理，文章管理等。如果你想迅速搭建起一个小型的内容发布网站，efucms不失为一个好的选择。你可以根据自己的需要，随意地对代码进行任何修改，因为efucms是开源的。
 
 安装
 ---
