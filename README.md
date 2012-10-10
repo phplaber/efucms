@@ -2,6 +2,8 @@
 efucms
 ======
 
+![efucms](./logo.png "Easy for use CMS")
+
 说明
 ---
 
@@ -10,17 +12,17 @@ efucms
 安装
 ---
 
-将项目文件放在自己服务器文档根目录下，修改配置文件“config.php”中数据库权限，创建数据库efucms，最后手动导入数据库文件“efucms.sql”。后台登录用户名与密码都为“admin”，可自行修改。目前版本是1.0 beta，安装efucms需要手动导入数据库文件。在稍后的1.0版本中，将会提供安装界面。
+将项目文件放在自己服务器根目录下，修改配置文件“config.php”中数据库权限，创建数据库efucms，最后手动导入数据库文件“efucms.sql”。后台登录用户名与密码都为“admin”，可自行修改。目前版本是1.0 beta，安装efucms需要手动导入数据库文件。在稍后的1.0版本中，将会提供安装界面。
 
 SEO
 ---
 
 为了网站的SEO，可以去掉URL里的index.php，配置方法如下：
 
-1. httpd.conf配置文件中加载mod_rewrite.so模块。
-2. 修改“AllowOverride None”，将None改为All。
-3. 设置URL_MODEL的值为2。
-4. 把.htaccess文件放到入口文件的同级目录下。
+1. httpd.conf配置文件中加载mod_rewrite.so模块
+2. 修改“AllowOverride None”，将None改为All
+3. 设置URL_MODEL的值为2
+4. 将.htaccess文件放到入口文件的同级目录下
 
 ### .htaccess
 
