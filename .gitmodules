@@ -1,3 +1,3 @@
 [submodule "Securimage"]
 path = ThinkPHP/Vendor/Securimage
-url = https://github.com/dapphp/securimage
+url = https://github.com/phplaber/securimage
