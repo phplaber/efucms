@@ -6,7 +6,7 @@ class IndexAction extends Action
     public function index()
     {
 		// 导入验证码生成类
-		vendor("Securimage.securimage");
+		vendor("Securimagev2.securimage");
 		$img = new Securimage();
 		$options = array(
 				'show_audio_button' => false,
@@ -24,7 +24,7 @@ class IndexAction extends Action
 	{
 		$obj_admin = M('Admin');
 		$admin = $obj_admin->find(1);
-		vendor("Securimage.securimage");
+		vendor("Securimagev2.securimage");
 		$img = new Securimage();
 		//print_r($admin);
 		if ($_POST['username'] == $admin['username'] && md5($_POST['password']) == $admin['password'] && $img->check($_POST['captcha_code']) == true)

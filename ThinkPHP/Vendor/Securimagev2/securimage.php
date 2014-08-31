@@ -1,6 +1,6 @@
 <?php
 
- error_reporting(E_ALL); ini_set('display_errors', 1); // uncomment this line for debugging
+// error_reporting(E_ALL); ini_set('display_errors', 1); // uncomment this line for debugging
 
 /**
  * Project:  Securimage: A PHP class dealing with CAPTCHA images, audio, and validation
