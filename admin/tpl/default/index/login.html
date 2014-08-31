@@ -28,9 +28,6 @@ body{
 	font-weight:bold;
 	font-size:13px;
 	display:block;}
-
-input[type=text], input[type=password] {
-	width: 150px;}	/* 控制文本框长度 */
 	
 #footer{
 	background-color:#f6f6ef;
@@ -73,8 +70,9 @@ input[type=text], input[type=password] {
 <td align="right"><label for="psw">密码</label></td>
 <td><input type="password" name="password" id="psw"/></td>
 </tr>
+{$code}
 <tr>
-<td colspan="2" align="right"><input type="submit" name="submitform" value="登录" /></td>
+<td colspan="2" align="left"><input type="submit" name="submitform" value="登录" /></td>
 </tr>
 </form>
 </table>
@@ -89,7 +87,12 @@ function checkForm()
 {
 	if(document.getElementById("username").value=="" || document.getElementById("psw").value=="")
 	{
-		document.getElementById("error").innerHTML = "<small>无效的用户名或密码</small>";
+		document.getElementById("error").innerHTML = "<small style='color:red;'>无效的用户名或密码</small>";
+		return false;
+	}
+
+	if (document.getElementById("captcha_code").value.trim() == '') {
+		document.getElementById("error").innerHTML = "<small style='color:red;'>验证码不能为空</small>";
 		return false;
 	}
 	
