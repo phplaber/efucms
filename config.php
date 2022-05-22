@@ -1,1 +1,0 @@
-<?php return array('DB_PWD'=>'19880327','DB_TYPE'=>'mysql','DB_HOST'=>'localhost','DB_USER'=>'root','DB_NAME'=>'efucms','DB_PREFIX'=>'efu_','APP_NAME'=>'Easy For Use CMS','LIST_PAGE'=>'5','APP_METADESC'=>'EFUcms是一款简单易用的内容管理系统，提供了CMS所有最基本的功能。','APP_METAKEY'=>'CMS, 简单易用','APP_YEAR'=>'2012','APP_ICP'=>'苏ICP备11110000');
