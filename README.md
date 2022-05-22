@@ -7,7 +7,7 @@ efucms
 说明
 ---
 
-这是一个简单易用的内容管理系统（easy for use cms），基于[ThinkPHP](http://www.thinkphp.cn/)开发。efucms具备了内容管理系统的大多最基本的功能，包括栏目管理，文章管理等。如果你想迅速搭建起一个小型的内容发布网站，efucms不失为一个好的选择。你可以根据自己的需要，随意地对代码进行任何修改，因为efucms是开源的。
+这是一个简单易用的内容管理系统（easy for use cms），基于[ThinkPHP](http://www.thinkphp.cn/)开发，并被 ThinkPHP 官网收录为[代表应用](https://www.thinkphp.cn/app/efucms.html)。efucms具备了内容管理系统的大多最基本的功能，包括栏目管理，文章管理等。如果你想迅速搭建起一个小型的内容发布网站，efucms不失为一个好的选择。你可以根据自己的需要，随意地对代码进行任何修改，因为efucms是开源的。
 
 安装
 ---
